@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="10/12/2025 9:51:44 PM"
@@ -11,9 +11,1587 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionGUID="{2AA0A483-BE84-40AF-A82F-060024BCBADD}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{3BCF2349-7E45-444A-A940-48FA886ACAAF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.Associations]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FBCEBA86-746B-45A6-BE0B-DC3213BC1C69}"
+      DTS:ObjectName="LocalHost.Associations">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Associations;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{FBCEBA86-746B-45A6-BE0B-DC3213BC1C69}LocalHost.Associations;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A26FB6EF-7468-4040-8FF8-E8CC77D8ADC7}"
+      DTS:ObjectName="LocalHost.DW_Asso">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DW_Asso;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{A26FB6EF-7468-4040-8FF8-E8CC77D8ADC7}LocalHost.DW_Asso;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load identity dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{15FE6B7B-62B3-41D6-8158-8CA05F5E9C28}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load identity dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load identity dimension\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[id_ex]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_ex"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id_ex]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[siret]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="siret"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[siret]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[rup_mi]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="rup_mi"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[rup_mi]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[titre]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="titre"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[titre_court]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="titre_court"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre_court]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[observation]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="observation"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[observation]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[position]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="position"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[position]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[nature]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nature"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[nature]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[groupement]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="groupement"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[groupement]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[titre_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[titre_clean]"
+                      name="titre_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[UPPER]([TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">UPPER(TRIM(titre))</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[nature_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[nature_clean]"
+                      name="nature_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[nature]}) ? "INCONNUE" : [TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[nature]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(nature) ? "INCONNUE" : TRIM(nature)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[position_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[position_clean]"
+                      name="position_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[position]}) ? "NON PRÉCISÉE" : [TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[position]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(position) ? "NON PRÉCISÉE" : TRIM(position)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[observation_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[observation_clean]"
+                      name="observation_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[LEFT]([ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[observation]}) ? "NON PRÉCISÉE" : #{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[observation]},255)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">LEFT(ISNULL(observation) ? "NON PRÉCISÉE" : observation,255)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[id_ex_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[id_ex_clean]"
+                      name="id_ex_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id_ex]}) ? "IDEX_INCONNU" : [REPLACE]([TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id_ex]})," ","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(id_ex) ? "IDEX_INCONNU" : REPLACE(TRIM(id_ex)," ","")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siret_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siret_clean]"
+                      name="siret_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[siret]}) ? "SIRET_INCONNU" : [REPLACE]([TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[siret]})," ","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(siret) ? "SIRET_INCONNU" : REPLACE(TRIM(siret)," ","")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[rup_mi_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[rup_mi_clean]"
+                      name="rup_mi_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[rup_mi]}) ? "RUP_MI_INCONNU" : [REPLACE]([TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[rup_mi]})," ","")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(rup_mi) ? "RUP_MI_INCONNU" : REPLACE(TRIM(rup_mi)," ","")</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[titre_court_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[titre_court_clean]"
+                      name="titre_court_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre_court]}) ? "INCONNUE" : [TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre_court]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(titre_court) ? "INCONNUE" : TRIM(titre_court)</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[groupement_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[groupement_clean]"
+                      name="groupement_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[groupement]}) ? "INCONNUE" : [TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[groupement]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(groupement) ? "INCONNUE" : TRIM(groupement)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load identity dimension\Commande OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Commande OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE dbo.Dim_Identity
+SET
+    id = ?,
+    titre = ?,
+    titre_court = ?,
+    nature = ?,
+    groupement = ?,
+    position = ?,
+    observation = ?,
+    siret = ?
+WHERE code_identity = ?
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load identity dimension\Commande OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[id_ex_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_ex_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[id_ex_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[titre_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="titre_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[titre_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[titre_court_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="titre_court_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[titre_court_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[groupement_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="groupement_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[groupement_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[nature_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nature_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[nature_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[position_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="position_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[position_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[observation_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="observation_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[observation_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[siret_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="siret_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_7]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siret_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_8]"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_7]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_8]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load identity dimension\Commande OLE DB.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load identity dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load identity dimension\Dw_identity"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Dw_identity"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Dim_identity]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load identity dimension\Dw_identity.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[code_identity]"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[id_ex_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id_ex_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[id_ex_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[titre_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="titre_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[titre]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[titre_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[titre_court_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="titre_court_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[titre_court]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[titre_court_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[nature_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nature_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[nature]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[nature_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[groupement_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="groupement_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[groupement]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[groupement_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[position_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="position_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[position]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[position_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[observation_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="observation_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[observation]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[observation_clean]" />
+                    <inputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].Columns[siret_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="siret_clean"
+                      externalMetadataColumnId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[siret]"
+                      lineageId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siret_clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[pk_identity]"
+                      dataType="i4"
+                      name="pk_identity" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[code_identity]"
+                      dataType="wstr"
+                      length="255"
+                      name="code_identity" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="255"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[titre]"
+                      dataType="wstr"
+                      length="255"
+                      name="titre" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[titre_court]"
+                      dataType="wstr"
+                      length="255"
+                      name="titre_court" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[nature]"
+                      dataType="wstr"
+                      length="255"
+                      name="nature" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[groupement]"
+                      dataType="wstr"
+                      length="255"
+                      name="groupement" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[position]"
+                      dataType="wstr"
+                      length="255"
+                      name="position" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[observation]"
+                      dataType="wstr"
+                      length="255"
+                      name="observation" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB].ExternalColumns[siret]"
+                      dataType="wstr"
+                      length="255"
+                      name="siret" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load identity dimension\Dw_identity.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\Dw_identity.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\Dw_identity.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\Dw_identity.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load identity dimension\Recherche"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_identity]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_identity]) [refTable]
+where [refTable].[code_identity] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="pk_identity" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_identity" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="id" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="titre" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="titre_court" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="nature" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="groupement" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="position" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="observation" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="siret" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load identity dimension\Recherche.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load identity dimension\Recherche.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load identity dimension\Recherche.Inputs[Entrée de recherche].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">code_identity</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load identity dimension\Recherche.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Load identity dimension\Recherche.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load identity dimension\Recherche.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Load identity dimension\Recherche.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load identity dimension\Recherche.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Load identity dimension\Recherche.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load identity dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load identity dimension\SA_identity"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="SA_identity"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Associations_Identity]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT DISTINCT 
+    id_association,
+    siret,
+    id_ex,
+    titre,
+    nature,
+    groupement,
+    position,
+    observation,
+    source
+FROM[dbo].[Associations_Identity]
+WHERE titre IS NOT NULL;</property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load identity dimension\SA_identity.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Associations]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Associations]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[id]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id_ex]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[id_ex]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[id_ex]"
+                      name="id_ex"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[siret]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[siret]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[siret]"
+                      name="siret"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[rup_mi]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[rup_mi]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[rup_mi]"
+                      name="rup_mi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[titre]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre]"
+                      name="titre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre_court]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[titre_court]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre_court]"
+                      name="titre_court"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[observation]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[observation]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[observation]"
+                      name="observation"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[position]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[position]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[position]"
+                      name="position"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[nature]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[nature]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[nature]"
+                      name="nature"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[groupement]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[groupement]"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[groupement]"
+                      name="groupement"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="255"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[id_ex]"
+                      dataType="wstr"
+                      length="255"
+                      name="id_ex" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[siret]"
+                      dataType="wstr"
+                      length="255"
+                      name="siret" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[rup_mi]"
+                      dataType="wstr"
+                      length="255"
+                      name="rup_mi" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[titre]"
+                      dataType="wstr"
+                      length="255"
+                      name="titre" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[titre_court]"
+                      dataType="wstr"
+                      length="255"
+                      name="titre_court" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[observation]"
+                      dataType="wstr"
+                      length="255"
+                      name="observation" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[position]"
+                      dataType="wstr"
+                      length="255"
+                      name="position" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[nature]"
+                      dataType="wstr"
+                      length="255"
+                      name="nature" />
+                    <externalMetadataColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].ExternalColumns[groupement]"
+                      dataType="wstr"
+                      length="255"
+                      name="groupement" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[id_ex]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[id_ex]"
+                      name="id_ex" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[siret]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[siret]"
+                      name="siret" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[rup_mi]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[rup_mi]"
+                      name="rup_mi" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[titre]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[titre]"
+                      name="titre" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[titre_court]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[titre_court]"
+                      name="titre_court" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[observation]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[observation]"
+                      name="observation" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[position]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[position]"
+                      name="position" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[nature]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[nature]"
+                      name="nature" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[groupement]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[groupement]"
+                      name="groupement" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load identity dimension\SA_identity.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load identity dimension.Paths[Sortie de colonne dérivée]"
+              endId="Package\Load identity dimension\Recherche.Inputs[Entrée de recherche]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Load identity dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Load identity dimension.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Load identity dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Load identity dimension\Recherche.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Load identity dimension.Paths[Sortie de recherche sans correspondance]"
+              endId="Package\Load identity dimension\Dw_identity.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\Load identity dimension\Recherche.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\Load identity dimension.Paths[Sortie de source OLE DB]"
+              endId="Package\Load identity dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tâche d'exécution de requêtes SQL"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{33EC1BFA-0259-4C12-8E96-AF8049D9D099}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tâche d'exécution de requêtes SQL"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{A26FB6EF-7468-4040-8FF8-E8CC77D8ADC7}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Dim_identity;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte]"
+      DTS:CreationName=""
+      DTS:DTSID="{06DDD83F-0717-458A-84BA-44573CA0C2B3}"
+      DTS:From="Package\Tâche d'exécution de requêtes SQL"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte"
+      DTS:To="Package\Load identity dimension" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
+<!--Si vous modifiez manuellement cette section et commettez une erreur, vous pouvez la supprimer. -->
+<!--Le package pourra toujours se charger normalement, mais les informations de disposition précédente seront perdues et le concepteur réorganisera automatiquement les éléments sur l'aire de conception.-->
+<Objects
+  Version="8">
+  <!--Chaque nœud ci-dessous contiendra des propriétés qui n'affectent pas le comportement d'exécution.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Load identity dimension"
+          TopLeft="321,226" />
+        <NodeLayout
+          Size="254,42"
+          Id="Package\Tâche d'exécution de requêtes SQL"
+          TopLeft="296,87" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte]"
+          TopLeft="420.75,129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,97"
+              Start="0,0"
+              End="0,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load identity dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Load identity dimension\SA_identity"
+          TopLeft="336,91" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load identity dimension\Colonne dérivée"
+          TopLeft="327,166" />
+        <EdgeLayout
+          Id="Package\Load identity dimension.Paths[Sortie de source OLE DB]"
+          TopLeft="405,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.5801171875,6.91845703125,71.160234375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Load identity dimension\Recherche"
+          TopLeft="342.428571428571,258.428571428571" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Load identity dimension\Dw_identity"
+          TopLeft="200.979020979021,359.58041958042" />
+        <EdgeLayout
+          Id="Package\Load identity dimension.Paths[Sortie de colonne dérivée]"
+          TopLeft="407.464285714286,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.4285714285714"
+              Start="0,0"
+              End="0,42.9285714285714">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.9285714285714" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-35.5801171875,15.6327427455357,71.160234375,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load identity dimension.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="387.761904761905,300.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-118.782883782884,59.1518481518482"
+              Start="0,0"
+              End="-118.782883782884,51.6518481518482">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0857824809921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.0857824809921"
+                    Point2="0,24.0857824809921"
+                    Point3="-4,24.0857824809921" />
+                  <mssgle:LineSegment
+                    End="-114.782883782884,24.0857824809921" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-114.782883782884,24.0857824809921"
+                    Point2="-118.782883782884,24.0857824809921"
+                    Point3="-118.782883782884,28.0857824809921" />
+                  <mssgle:LineSegment
+                    End="-118.782883782884,51.6518481518482" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-191.093844235192,29.0857824809921,263.4048046875,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Load identity dimension\Commande OLE DB"
+          TopLeft="432.307692307692,356.153846153846" />
+        <EdgeLayout
+          Id="Package\Load identity dimension.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="429.095238095238,300.428571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="92.7124542124542,55.7252747252747"
+              Start="0,0"
+              End="92.7124542124542,48.2252747252747">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6905310258604" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.6905310258604"
+                    Point2="0,22.6905310258604"
+                    Point3="4,22.6905310258604" />
+                  <mssgle:LineSegment
+                    End="88.7124542124542,22.6905310258604" />
+                  <mssgle:CubicBezierSegment
+                    Point1="88.7124542124542,22.6905310258604"
+                    Point2="92.7124542124542,22.6905310258604"
+                    Point3="92.7124542124542,26.6905310258604" />
+                  <mssgle:LineSegment
+                    End="92.7124542124542,48.2252747252747" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-45.3207846125229,27.6905310258604,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load identity dimension\SA_identity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load identity dimension\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_identity]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load identity dimension\Dw_identity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

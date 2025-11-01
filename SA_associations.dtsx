@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="SA_associations"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{2EFB98EA-6F99-4BE3-A6D5-3594BF200F5F}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{E86F57F2-F358-4FF4-A3A4-65553EBA6B3B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -109,7 +109,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -121,7 +121,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=C:\Users\marie\Downloads\greffesfinale (2).xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=C:\Users\marie\Downloads\greffesfinale (2).xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -133,7 +133,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\marie\Downloads\greffesfinale (2).xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\marie\Downloads\greffesfinale (2).xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -145,7 +145,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -157,7 +157,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2)_final.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2)_final.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -181,7 +181,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -193,7 +193,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -205,7 +205,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xls;Extended Properties=&quot;Excel 8.0;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\marie\Downloads\convertir\greffesfinale (2).xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -217,7 +217,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Esprit\3IA\Data_Warehousing\project_S1\ressources\greffesFinale.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Esprit\3IA\Data_Warehousing\project_S1\ressources\greffesFinale.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -2257,6 +2257,13 @@
                           cachedName="maj_time"
                           externalMetadataColumnId="Package\Conteneur de boucles Foreach\Dates\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_maj]"
                           lineageId="Package\Conteneur de boucles Foreach\Dates\Source Excel.Outputs[Sortie de source Excel].Columns[maj_time]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Dates\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[date_disso]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="date_disso"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Dates\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_dissolution]"
+                          lineageId="Package\Conteneur de boucles Foreach\Dates\Source Excel.Outputs[Sortie de source Excel].Columns[date_disso]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2295,6 +2302,11 @@
                           dataType="wstr"
                           length="255"
                           name="titre" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Dates\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[date_dissolution]"
+                          dataType="wstr"
+                          length="255"
+                          name="date_dissolution" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -2873,6 +2885,20 @@
                           cachedName="observation"
                           externalMetadataColumnId="Package\Conteneur de boucles Foreach\Identity\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[observation]"
                           lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].Columns[observation]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Identity\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nature]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="nature"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Identity\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nature]"
+                          lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].Columns[nature]" />
+                        <inputColumn
+                          refId="Package\Conteneur de boucles Foreach\Identity\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[groupement]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="groupement"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Identity\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[groupement]"
+                          lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].Columns[groupement]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -2916,6 +2942,16 @@
                           dataType="wstr"
                           length="255"
                           name="observation" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Identity\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nature]"
+                          dataType="wstr"
+                          length="255"
+                          name="nature" />
+                        <externalMetadataColumn
+                          refId="Package\Conteneur de boucles Foreach\Identity\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[groupement]"
+                          dataType="wstr"
+                          length="255"
+                          name="groupement" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -3076,6 +3112,26 @@
                           length="255"
                           lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].Columns[titre]"
                           name="titre"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].Columns[nature]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nature]"
+                          length="255"
+                          lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].Columns[nature]"
+                          name="nature"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].Columns[groupement]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[groupement]"
+                          length="255"
+                          lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie de source Excel].Columns[groupement]"
+                          name="groupement"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
@@ -3336,6 +3392,18 @@
                           length="255"
                           lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[titre]"
                           name="titre" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nature]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nature]"
+                          name="nature" />
+                        <outputColumn
+                          refId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[groupement]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Conteneur de boucles Foreach\Identity\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[groupement]"
+                          name="groupement" />
                       </outputColumns>
                       <externalMetadataColumns />
                     </output>
@@ -6304,6 +6372,10 @@
           Id="Package\Conteneur de boucles Foreach"
           TopLeft="208,413" />
         <NodeLayout
+          Size="110,42"
+          Id="Package\Greffe"
+          TopLeft="384,116" />
+        <NodeLayout
           Size="140,42"
           Id="Package\Subventions"
           TopLeft="373,227" />
@@ -6334,32 +6406,6 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Contrainte 2]"
-          TopLeft="439,364">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,49"
-              Start="0,0"
-              End="0,41.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="110,42"
-          Id="Package\Greffe"
-          TopLeft="384,116" />
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 1]"
           TopLeft="440,76">
           <EdgeLayout.Curve>
@@ -6373,6 +6419,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 2]"
+          TopLeft="439,364">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6644,7 +6712,7 @@
     design-time-name="Package\Conteneur de boucles Foreach\Dates">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="144,42"
           Id="Package\Conteneur de boucles Foreach\Dates\Source Excel"
@@ -6684,9 +6752,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="55.9098828125,59,58.680234375,11.6630859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6722,7 +6788,7 @@
     design-time-name="Package\Conteneur de boucles Foreach\Identity">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="177,42"
           Id="Package\Conteneur de boucles Foreach\Identity\Destination OLE DB"
@@ -6762,9 +6828,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="62.9098828125,59,58.680234375,11.6630859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7031,6 +7095,84 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Greffe">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Greffe\Destination OLE DB"
+          TopLeft="393,380" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Greffe\Source Excel"
+          TopLeft="208,233" />
+        <EdgeLayout
+          Id="Package\Greffe.Paths[Sortie de source Excel]"
+          TopLeft="280,275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="201.5,105"
+              Start="0,0"
+              End="201.5,97.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,48.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,48.5"
+                    Point2="0,52.5"
+                    Point3="4,52.5" />
+                  <mssgle:LineSegment
+                    End="197.5,52.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="197.5,52.5"
+                    Point2="201.5,52.5"
+                    Point3="201.5,56.5" />
+                  <mssgle:LineSegment
+                    End="201.5,97.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Greffe\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Greffe\Source Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Subventions">
     <LayoutInfo>
       <GraphLayout
@@ -7097,82 +7239,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Subventions\Source Excel">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Greffe">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Greffe\Source Excel"
-          TopLeft="208,233" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Greffe\Destination OLE DB"
-          TopLeft="393,380" />
-        <EdgeLayout
-          Id="Package\Greffe.Paths[Sortie de source Excel]"
-          TopLeft="280,275">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="201.5,105"
-              Start="0,0"
-              End="201.5,97.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,48.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,48.5"
-                    Point2="0,52.5"
-                    Point3="4,52.5" />
-                  <mssgle:LineSegment
-                    End="197.5,52.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="197.5,52.5"
-                    Point2="201.5,52.5"
-                    Point3="201.5,56.5" />
-                  <mssgle:LineSegment
-                    End="201.5,97.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Greffe\Source Excel">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Greffe\Destination OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
