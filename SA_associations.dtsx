@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="SA_associations"
   DTS:PackageType="5"
-  DTS:VersionBuild="151"
-  DTS:VersionGUID="{5BC8210C-CFB6-47B3-B857-7E438F916AD0}">
+  DTS:VersionBuild="161"
+  DTS:VersionGUID="{E6F549A4-967B-4AFE-B73E-9FE6CF6A2619}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -256,7 +256,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=‪C:\Users\marie\Downloads\subventions_unifie.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.15.0;Data Source=‪C:\Users\marie\Downloads\subventions_unifie.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -268,7 +268,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=‪C:\Users\marie\Downloads\rna_waldec_20250101_dpt_71.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=‪C:\Users\marie\Downloads\rna_waldec_20250101_dpt_71.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -280,7 +280,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\rna_waldec_20250101_dpt_71.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\rna_waldec_20250101_dpt_71.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -292,7 +292,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\rna_waldec_20250101_dpt_14.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\marie\Downloads\rna_waldec_20250101_dpt_14.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -305,6 +305,42 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\Users\marie\Downloads\split_data\out_chunks_excel\jo_associations_part_001.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions Excel 30]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2BE2986E-2973-4F68-8DF2-0CB80A248D2F}"
+      DTS:ObjectName="Gestionnaire de connexions Excel 30">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Esprit\3IA\Data_Warehousing\project_S1\ressources\communes-france-2025.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions Excel 31]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{52ABB615-D0B5-43F6-9FEA-B108880E765C}"
+      DTS:ObjectName="Gestionnaire de connexions Excel 31">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Esprit\3IA\Data_Warehousing\project_S1\ressources\population_density.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Gestionnaire de connexions Excel 32]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{17548206-DC9F-4790-9169-6F9D7E668988}"
+      DTS:ObjectName="Gestionnaire de connexions Excel 32">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Esprit\3IA\Data_Warehousing\project_S1\ressources\communes-france-2025 (2).xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -756,6 +792,1488 @@
               endId="Package\Activity_parent\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
               name="Sortie de source Excel"
               startId="Package\Activity_parent\Source Excel.Outputs[Sortie de source Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Commune"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
+      DTS:DTSID="{BDF3604E-974F-45BE-9942-E6D68A2B2B79}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Commune"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Commune\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[communes]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Commune\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Associations]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Associations]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[code_insee]"
+                      cachedDataType="r8"
+                      cachedName="code_insee"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_insee]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_insee]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom_standard]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nom_standard"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_standard]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_standard]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom_sans_pronom]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nom_sans_pronom"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_sans_pronom]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_sans_pronom]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom_sans_accent]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nom_sans_accent"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_sans_accent]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_sans_accent]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[nom_standard_majuscule]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="nom_standard_majuscule"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_standard_majuscule]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_standard_majuscule]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[typecom]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="typecom"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[typecom]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[typecom]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[typecom_texte]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="typecom_texte"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[typecom_texte]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[typecom_texte]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[reg_code]"
+                      cachedDataType="r8"
+                      cachedName="reg_code"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reg_code]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[reg_code]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[reg_nom]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="reg_nom"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reg_nom]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[reg_nom]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[dep_code]"
+                      cachedDataType="r8"
+                      cachedName="dep_code"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[dep_code]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[dep_code]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[dep_nom]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="dep_nom"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[dep_nom]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[dep_nom]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[academie_code]"
+                      cachedDataType="r8"
+                      cachedName="academie_code"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[academie_code]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[academie_code]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[academie_nom]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="academie_nom"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[academie_nom]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[academie_nom]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[code_postal]"
+                      cachedDataType="r8"
+                      cachedName="code_postal"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_postal]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_postal]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[codes_postaux]"
+                      cachedDataType="r8"
+                      cachedName="codes_postaux"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[codes_postaux]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[codes_postaux]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[taille_unite_urbaine]"
+                      cachedDataType="r8"
+                      cachedName="taille_unite_urbaine"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[taille_unite_urbaine]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[taille_unite_urbaine]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[type_commune_unite_urbaine]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="type_commune_unite_urbaine"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[type_commune_unite_urbaine]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[type_commune_unite_urbaine]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[statut_commune_unite_urbaine]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="statut_commune_unite_urbaine"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[statut_commune_unite_urbaine]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[statut_commune_unite_urbaine]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[superficie_km2]"
+                      cachedDataType="r8"
+                      cachedName="superficie_km2"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[superficie_km2]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[superficie_km2]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[densite]"
+                      cachedDataType="r8"
+                      cachedName="densite"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[densite]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[densite]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[altitude_moyenne]"
+                      cachedDataType="r8"
+                      cachedName="altitude_moyenne"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[altitude_moyenne]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_moyenne]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[altitude_minimale]"
+                      cachedDataType="r8"
+                      cachedName="altitude_minimale"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[altitude_minimale]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_minimale]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[altitude_maximale]"
+                      cachedDataType="r8"
+                      cachedName="altitude_maximale"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[altitude_maximale]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_maximale]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[latitude_mairie]"
+                      cachedDataType="r8"
+                      cachedName="latitude_mairie"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[latitude_mairie]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[latitude_mairie]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[longitude_mairie]"
+                      cachedDataType="r8"
+                      cachedName="longitude_mairie"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[longitude_mairie]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[longitude_mairie]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[latitude_centre]"
+                      cachedDataType="r8"
+                      cachedName="latitude_centre"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[latitude_centre]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[latitude_centre]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[longitude_centre]"
+                      cachedDataType="r8"
+                      cachedName="longitude_centre"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[longitude_centre]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[longitude_centre]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[grille_densite]"
+                      cachedDataType="r8"
+                      cachedName="grille_densite"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[grille_densite]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[grille_densite]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[grille_densite_texte]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="grille_densite_texte"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[grille_densite_texte]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[grille_densite_texte]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[niveau_equipements_services]"
+                      cachedDataType="r8"
+                      cachedName="niveau_equipements_services"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[niveau_equipements_services]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[niveau_equipements_services]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[niveau_equipements_services_texte]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="niveau_equipements_services_texte"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[niveau_equipements_services_texte]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[niveau_equipements_services_texte]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[population]"
+                      cachedDataType="r8"
+                      cachedName="population"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[commune_population]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[population]" />
+                    <inputColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[gentile]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="gentile"
+                      externalMetadataColumnId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[gentilé]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[gentile]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_insee]"
+                      dataType="wstr"
+                      length="10"
+                      name="code_insee" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_standard]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_standard" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_sans_pronom]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_sans_pronom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_sans_accent]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_sans_accent" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[nom_standard_majuscule]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_standard_majuscule" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[typecom]"
+                      dataType="wstr"
+                      length="255"
+                      name="typecom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[typecom_texte]"
+                      dataType="wstr"
+                      length="255"
+                      name="typecom_texte" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reg_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="reg_code" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[reg_nom]"
+                      dataType="wstr"
+                      length="255"
+                      name="reg_nom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[dep_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="dep_code" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[dep_nom]"
+                      dataType="wstr"
+                      length="255"
+                      name="dep_nom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[academie_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="academie_code" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[academie_nom]"
+                      dataType="wstr"
+                      length="255"
+                      name="academie_nom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_postal]"
+                      dataType="wstr"
+                      length="255"
+                      name="code_postal" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[codes_postaux]"
+                      dataType="wstr"
+                      length="200"
+                      name="codes_postaux" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[taille_unite_urbaine]"
+                      dataType="r8"
+                      name="taille_unite_urbaine" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[type_commune_unite_urbaine]"
+                      dataType="wstr"
+                      length="255"
+                      name="type_commune_unite_urbaine" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[statut_commune_unite_urbaine]"
+                      dataType="wstr"
+                      length="255"
+                      name="statut_commune_unite_urbaine" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[commune_population]"
+                      dataType="i4"
+                      name="commune_population" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[superficie_km2]"
+                      dataType="r8"
+                      name="superficie_km2" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[densite]"
+                      dataType="r8"
+                      name="densite" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[altitude_moyenne]"
+                      dataType="r8"
+                      name="altitude_moyenne" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[altitude_minimale]"
+                      dataType="r8"
+                      name="altitude_minimale" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[altitude_maximale]"
+                      dataType="r8"
+                      name="altitude_maximale" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[latitude_mairie]"
+                      dataType="r8"
+                      name="latitude_mairie" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[longitude_mairie]"
+                      dataType="r8"
+                      name="longitude_mairie" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[latitude_centre]"
+                      dataType="r8"
+                      name="latitude_centre" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[longitude_centre]"
+                      dataType="r8"
+                      name="longitude_centre" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[grille_densite]"
+                      dataType="i4"
+                      name="grille_densite" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[grille_densite_texte]"
+                      dataType="wstr"
+                      length="255"
+                      name="grille_densite_texte" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[niveau_equipements_services]"
+                      dataType="r8"
+                      name="niveau_equipements_services" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[niveau_equipements_services_texte]"
+                      dataType="wstr"
+                      length="255"
+                      name="niveau_equipements_services_texte" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[gentilé]"
+                      dataType="wstr"
+                      length="255"
+                      name="gentilé" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Commune\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Commune\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Commune\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Commune\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Commune\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Commune\Source Excel"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Source Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source Excel"
+              name="Source Excel"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">'communes-france-2025$'</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappage des paramètres de la commande SQL en variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Commune\Source Excel.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gestionnaire de connexions Excel 32]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gestionnaire de connexions Excel 32]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel]"
+                  name="Sortie de source Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[F1]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[F1]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[F1]"
+                      name="F1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_insee]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_insee]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_insee]"
+                      name="code_insee"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_standard]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_standard]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_standard]"
+                      name="nom_standard"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_sans_pronom]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_sans_pronom]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_sans_pronom]"
+                      name="nom_sans_pronom"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_a]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_a]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_a]"
+                      name="nom_a"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_de]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_de]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_de]"
+                      name="nom_de"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_sans_accent]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_sans_accent]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_sans_accent]"
+                      name="nom_sans_accent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_standard_majuscule]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_standard_majuscule]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_standard_majuscule]"
+                      name="nom_standard_majuscule"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[typecom]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[typecom]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[typecom]"
+                      name="typecom"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[typecom_texte]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[typecom_texte]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[typecom_texte]"
+                      name="typecom_texte"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[reg_code]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[reg_code]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[reg_code]"
+                      name="reg_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[reg_nom]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[reg_nom]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[reg_nom]"
+                      name="reg_nom"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[dep_code]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[dep_code]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[dep_code]"
+                      name="dep_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[dep_nom]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[dep_nom]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[dep_nom]"
+                      name="dep_nom"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[canton_code]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[canton_code]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[canton_code]"
+                      name="canton_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[canton_nom]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[canton_nom]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[canton_nom]"
+                      name="canton_nom"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[epci_code]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[epci_code]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[epci_code]"
+                      name="epci_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[epci_nom]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[epci_nom]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[epci_nom]"
+                      name="epci_nom"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[academie_code]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[academie_code]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[academie_code]"
+                      name="academie_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[academie_nom]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[academie_nom]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[academie_nom]"
+                      name="academie_nom"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_postal]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_postal]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_postal]"
+                      name="code_postal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[codes_postaux]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[codes_postaux]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[codes_postaux]"
+                      name="codes_postaux"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[zone_emploi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[zone_emploi]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[zone_emploi]"
+                      name="zone_emploi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_insee_centre_zone_emploi]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_insee_centre_zone_emploi]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_insee_centre_zone_emploi]"
+                      name="code_insee_centre_zone_emploi"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_unite_urbaine]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_unite_urbaine]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[code_unite_urbaine]"
+                      name="code_unite_urbaine"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_unite_urbaine]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_unite_urbaine]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[nom_unite_urbaine]"
+                      name="nom_unite_urbaine"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[taille_unite_urbaine]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[taille_unite_urbaine]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[taille_unite_urbaine]"
+                      name="taille_unite_urbaine"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[type_commune_unite_urbaine]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[type_commune_unite_urbaine]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[type_commune_unite_urbaine]"
+                      name="type_commune_unite_urbaine"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[statut_commune_unite_urbaine]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[statut_commune_unite_urbaine]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[statut_commune_unite_urbaine]"
+                      name="statut_commune_unite_urbaine"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[population]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[population]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[population]"
+                      name="population"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[superficie_hectare]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[superficie_hectare]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[superficie_hectare]"
+                      name="superficie_hectare"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[superficie_km2]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[superficie_km2]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[superficie_km2]"
+                      name="superficie_km2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[densite]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[densite]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[densite]"
+                      name="densite"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_moyenne]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[altitude_moyenne]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_moyenne]"
+                      name="altitude_moyenne"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_minimale]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[altitude_minimale]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_minimale]"
+                      name="altitude_minimale"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_maximale]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[altitude_maximale]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[altitude_maximale]"
+                      name="altitude_maximale"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[latitude_mairie]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[latitude_mairie]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[latitude_mairie]"
+                      name="latitude_mairie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[longitude_mairie]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[longitude_mairie]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[longitude_mairie]"
+                      name="longitude_mairie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[latitude_centre]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[latitude_centre]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[latitude_centre]"
+                      name="latitude_centre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[longitude_centre]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[longitude_centre]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[longitude_centre]"
+                      name="longitude_centre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[grille_densite]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[grille_densite]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[grille_densite]"
+                      name="grille_densite"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[grille_densite_texte]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[grille_densite_texte]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[grille_densite_texte]"
+                      name="grille_densite_texte"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[niveau_equipements_services]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[niveau_equipements_services]"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[niveau_equipements_services]"
+                      name="niveau_equipements_services"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[niveau_equipements_services_texte]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[niveau_equipements_services_texte]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[niveau_equipements_services_texte]"
+                      name="niveau_equipements_services_texte"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[gentile]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[gentile]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[gentile]"
+                      name="gentile"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[url_wikipedia]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[url_wikipedia]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[url_wikipedia]"
+                      name="url_wikipedia"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[url_villedereve]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[url_villedereve]"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].Columns[url_villedereve]"
+                      name="url_villedereve"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[F1]"
+                      dataType="r8"
+                      name="F1" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_insee]"
+                      dataType="r8"
+                      name="code_insee" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_standard]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_standard" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_sans_pronom]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_sans_pronom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_a]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_a" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_de]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_de" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_sans_accent]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_sans_accent" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_standard_majuscule]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_standard_majuscule" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[typecom]"
+                      dataType="wstr"
+                      length="255"
+                      name="typecom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[typecom_texte]"
+                      dataType="wstr"
+                      length="255"
+                      name="typecom_texte" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[reg_code]"
+                      dataType="r8"
+                      name="reg_code" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[reg_nom]"
+                      dataType="wstr"
+                      length="255"
+                      name="reg_nom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[dep_code]"
+                      dataType="r8"
+                      name="dep_code" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[dep_nom]"
+                      dataType="wstr"
+                      length="255"
+                      name="dep_nom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[canton_code]"
+                      dataType="r8"
+                      name="canton_code" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[canton_nom]"
+                      dataType="wstr"
+                      length="255"
+                      name="canton_nom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[epci_code]"
+                      dataType="r8"
+                      name="epci_code" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[epci_nom]"
+                      dataType="wstr"
+                      length="255"
+                      name="epci_nom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[academie_code]"
+                      dataType="r8"
+                      name="academie_code" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[academie_nom]"
+                      dataType="wstr"
+                      length="255"
+                      name="academie_nom" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_postal]"
+                      dataType="r8"
+                      name="code_postal" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[codes_postaux]"
+                      dataType="r8"
+                      name="codes_postaux" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[zone_emploi]"
+                      dataType="r8"
+                      name="zone_emploi" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_insee_centre_zone_emploi]"
+                      dataType="r8"
+                      name="code_insee_centre_zone_emploi" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_unite_urbaine]"
+                      dataType="r8"
+                      name="code_unite_urbaine" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[nom_unite_urbaine]"
+                      dataType="wstr"
+                      length="255"
+                      name="nom_unite_urbaine" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[taille_unite_urbaine]"
+                      dataType="r8"
+                      name="taille_unite_urbaine" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[type_commune_unite_urbaine]"
+                      dataType="wstr"
+                      length="255"
+                      name="type_commune_unite_urbaine" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[statut_commune_unite_urbaine]"
+                      dataType="wstr"
+                      length="255"
+                      name="statut_commune_unite_urbaine" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[population]"
+                      dataType="r8"
+                      name="population" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[superficie_hectare]"
+                      dataType="r8"
+                      name="superficie_hectare" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[superficie_km2]"
+                      dataType="r8"
+                      name="superficie_km2" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[densite]"
+                      dataType="r8"
+                      name="densite" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[altitude_moyenne]"
+                      dataType="r8"
+                      name="altitude_moyenne" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[altitude_minimale]"
+                      dataType="r8"
+                      name="altitude_minimale" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[altitude_maximale]"
+                      dataType="r8"
+                      name="altitude_maximale" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[latitude_mairie]"
+                      dataType="r8"
+                      name="latitude_mairie" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[longitude_mairie]"
+                      dataType="r8"
+                      name="longitude_mairie" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[latitude_centre]"
+                      dataType="r8"
+                      name="latitude_centre" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[longitude_centre]"
+                      dataType="r8"
+                      name="longitude_centre" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[grille_densite]"
+                      dataType="r8"
+                      name="grille_densite" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[grille_densite_texte]"
+                      dataType="wstr"
+                      length="255"
+                      name="grille_densite_texte" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[niveau_equipements_services]"
+                      dataType="r8"
+                      name="niveau_equipements_services" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[niveau_equipements_services_texte]"
+                      dataType="wstr"
+                      length="255"
+                      name="niveau_equipements_services_texte" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[gentile]"
+                      dataType="wstr"
+                      length="255"
+                      name="gentile" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[url_wikipedia]"
+                      dataType="wstr"
+                      length="255"
+                      name="url_wikipedia" />
+                    <externalMetadataColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[url_villedereve]"
+                      dataType="wstr"
+                      length="255"
+                      name="url_villedereve" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[F1]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[F1]"
+                      name="F1" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_insee]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_insee]"
+                      name="code_insee" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_standard]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_standard]"
+                      name="nom_standard" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_sans_pronom]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_sans_pronom]"
+                      name="nom_sans_pronom" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_a]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_a]"
+                      name="nom_a" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_de]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_de]"
+                      name="nom_de" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_sans_accent]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_sans_accent]"
+                      name="nom_sans_accent" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_standard_majuscule]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_standard_majuscule]"
+                      name="nom_standard_majuscule" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[typecom]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[typecom]"
+                      name="typecom" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[typecom_texte]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[typecom_texte]"
+                      name="typecom_texte" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[reg_code]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[reg_code]"
+                      name="reg_code" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[reg_nom]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[reg_nom]"
+                      name="reg_nom" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[dep_code]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[dep_code]"
+                      name="dep_code" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[dep_nom]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[dep_nom]"
+                      name="dep_nom" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[canton_code]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[canton_code]"
+                      name="canton_code" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[canton_nom]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[canton_nom]"
+                      name="canton_nom" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[epci_code]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[epci_code]"
+                      name="epci_code" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[epci_nom]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[epci_nom]"
+                      name="epci_nom" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[academie_code]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[academie_code]"
+                      name="academie_code" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[academie_nom]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[academie_nom]"
+                      name="academie_nom" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_postal]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_postal]"
+                      name="code_postal" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[codes_postaux]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[codes_postaux]"
+                      name="codes_postaux" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[zone_emploi]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[zone_emploi]"
+                      name="zone_emploi" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_insee_centre_zone_emploi]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_insee_centre_zone_emploi]"
+                      name="code_insee_centre_zone_emploi" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_unite_urbaine]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_unite_urbaine]"
+                      name="code_unite_urbaine" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_unite_urbaine]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[nom_unite_urbaine]"
+                      name="nom_unite_urbaine" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[taille_unite_urbaine]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[taille_unite_urbaine]"
+                      name="taille_unite_urbaine" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[type_commune_unite_urbaine]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[type_commune_unite_urbaine]"
+                      name="type_commune_unite_urbaine" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[statut_commune_unite_urbaine]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[statut_commune_unite_urbaine]"
+                      name="statut_commune_unite_urbaine" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[population]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[population]"
+                      name="population" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[superficie_hectare]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[superficie_hectare]"
+                      name="superficie_hectare" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[superficie_km2]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[superficie_km2]"
+                      name="superficie_km2" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[densite]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[densite]"
+                      name="densite" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[altitude_moyenne]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[altitude_moyenne]"
+                      name="altitude_moyenne" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[altitude_minimale]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[altitude_minimale]"
+                      name="altitude_minimale" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[altitude_maximale]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[altitude_maximale]"
+                      name="altitude_maximale" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[latitude_mairie]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[latitude_mairie]"
+                      name="latitude_mairie" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[longitude_mairie]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[longitude_mairie]"
+                      name="longitude_mairie" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[latitude_centre]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[latitude_centre]"
+                      name="latitude_centre" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[longitude_centre]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[longitude_centre]"
+                      name="longitude_centre" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[grille_densite]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[grille_densite]"
+                      name="grille_densite" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[grille_densite_texte]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[grille_densite_texte]"
+                      name="grille_densite_texte" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[niveau_equipements_services]"
+                      dataType="r8"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[niveau_equipements_services]"
+                      name="niveau_equipements_services" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[niveau_equipements_services_texte]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[niveau_equipements_services_texte]"
+                      name="niveau_equipements_services_texte" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[gentile]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[gentile]"
+                      name="gentile" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[url_wikipedia]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[url_wikipedia]"
+                      name="url_wikipedia" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[url_villedereve]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[url_villedereve]"
+                      name="url_villedereve" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Commune\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Commune.Paths[Sortie de source Excel]"
+              endId="Package\Commune\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source Excel"
+              startId="Package\Commune\Source Excel.Outputs[Sortie de source Excel]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -4324,14 +5842,35 @@
               Language="CSharp"
               ReadWriteVariables="User::var_filename">
               <ProjectItem
-                Name="Properties\Settings.settings"
-                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
-</SettingsFile>]]></ProjectItem>
+                Name="Properties\AssemblyInfo.cs"
+                Encoding="UTF8"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("ST_0cac00545b65492eb6f19b57e812b06d")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("ST_0cac00545b65492eb6f19b57e812b06d")]
+[assembly: AssemblyCopyright("Copyright @  2025")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -4708,35 +6247,14 @@ namespace ST_0cac00545b65492eb6f19b57e812b06d.Properties {
     }
 }]]></ProjectItem>
               <ProjectItem
-                Name="Properties\AssemblyInfo.cs"
-                Encoding="UTF8"><![CDATA[using System.Reflection;
-using System.Runtime.CompilerServices;
-
-//
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-//
-[assembly: AssemblyTitle("ST_0cac00545b65492eb6f19b57e812b06d")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ST_0cac00545b65492eb6f19b57e812b06d")]
-[assembly: AssemblyCopyright("Copyright @  2025")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-//
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-// You can specify all the values or you can default the Revision and Build Numbers 
-// by using the '*' as shown below:
-
-[assembly: AssemblyVersion("1.0.*")]]]></ProjectItem>
+                Name="Properties\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
               <ProjectItem
                 Name="Properties\Resources.Designer.cs"
                 Encoding="UTF8"><![CDATA[//------------------------------------------------------------------------------
@@ -5963,6 +7481,329 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Population"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
+      DTS:DTSID="{8EC1C545-D552-4534-841A-46FD0A7526E7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Population"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Population\Destination OLE DB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Destination OLE DB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Sa_Population]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Population\Destination OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Associations]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Associations]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[code_insee]"
+                      cachedDataType="r8"
+                      cachedName="code_insee"
+                      externalMetadataColumnId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_insee]"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[code_insee]" />
+                    <inputColumn
+                      refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[population]"
+                      cachedDataType="r8"
+                      cachedName="population"
+                      externalMetadataColumnId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[population_per_year]"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[population]" />
+                    <inputColumn
+                      refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[densite]"
+                      cachedDataType="r8"
+                      cachedName="densite"
+                      externalMetadataColumnId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[density_per_year]"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[densite]" />
+                    <inputColumn
+                      refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[annee]"
+                      cachedDataType="r8"
+                      cachedName="annee"
+                      externalMetadataColumnId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stat_year]"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[annee]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_insee]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="code_insee" />
+                    <externalMetadataColumn
+                      refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[population_per_year]"
+                      dataType="r8"
+                      name="population_per_year" />
+                    <externalMetadataColumn
+                      refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[density_per_year]"
+                      dataType="r8"
+                      name="density_per_year" />
+                    <externalMetadataColumn
+                      refId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stat_year]"
+                      dataType="i4"
+                      name="stat_year" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Population\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Population\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Population\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Population\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Population\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Population\Source Excel"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Source Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;1"
+              description="Source Excel"
+              name="Source Excel"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">Feuil1$</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappage des paramètres de la commande SQL en variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Population\Source Excel.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Gestionnaire de connexions Excel 31]"
+                  connectionManagerRefId="Package.ConnectionManagers[Gestionnaire de connexions Excel 31]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Population\Source Excel.Outputs[Sortie de source Excel]"
+                  name="Sortie de source Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[code_insee]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Population\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_insee]"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[code_insee]"
+                      name="code_insee"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[population]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Population\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[population]"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[population]"
+                      name="population"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[densite]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Population\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[densite]"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[densite]"
+                      name="densite"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[annee]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Population\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[annee]"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie de source Excel].Columns[annee]"
+                      name="annee"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[code_insee]"
+                      dataType="r8"
+                      name="code_insee" />
+                    <externalMetadataColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[population]"
+                      dataType="r8"
+                      name="population" />
+                    <externalMetadataColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[densite]"
+                      dataType="r8"
+                      name="densite" />
+                    <externalMetadataColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[annee]"
+                      dataType="r8"
+                      name="annee" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_insee]"
+                      dataType="r8"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[code_insee]"
+                      name="code_insee" />
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[population]"
+                      dataType="r8"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[population]"
+                      name="population" />
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[densite]"
+                      dataType="r8"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[densite]"
+                      name="densite" />
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[annee]"
+                      dataType="r8"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[annee]"
+                      name="annee" />
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Population\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Population.Paths[Sortie de source Excel]"
+              endId="Package\Population\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de source Excel"
+              startId="Package\Population\Source Excel.Outputs[Sortie de source Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Subventions"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
@@ -6743,11 +8584,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
       DTS:CreationName=""
-      DTS:DTSID="{6B91B2E3-187B-4A00-9B27-5ED82F1DA263}"
+      DTS:DTSID="{C2D689BE-BB72-4D37-8D42-43E20CBA176A}"
       DTS:From="Package\Tâche d'exécution de requêtes SQL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 1"
-      DTS:To="Package\Greffe" />
+      DTS:To="Package\Population" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte 2]"
       DTS:CreationName=""
@@ -6764,6 +8605,22 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte 3"
       DTS:To="Package\Subventions" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{A566D3BB-19AF-48FF-8C0C-5709835ECA3B}"
+      DTS:From="Package\Commune"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 4"
+      DTS:To="Package\Greffe" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{1E8AEA8B-C4CF-4DFA-8AA9-46495C97175D}"
+      DTS:From="Package\Population"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 5"
+      DTS:To="Package\Commune" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
@@ -6780,7 +8637,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="151,42"
           Id="Package\Activity_parent"
-          TopLeft="567.25,339.25" />
+          TopLeft="567.25,375.5" />
         <NodeLayout
           Size="114,42"
           Id="Package\Conteneur de boucles Foreach\Activity"
@@ -6997,55 +8854,33 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="661,390"
           Size="661,433"
           Id="Package\Conteneur de boucles Foreach"
-          TopLeft="314.75,409.5" />
+          TopLeft="312.25,454.5" />
         <NodeLayout
           Size="110,42"
           Id="Package\Greffe"
-          TopLeft="595.5,188.25" />
+          TopLeft="593,225.75" />
         <NodeLayout
           Size="140,42"
           Id="Package\Subventions"
-          TopLeft="576.25,264.75" />
+          TopLeft="576.25,294.75" />
         <NodeLayout
           Size="254,43"
           Id="Package\Tâche d'exécution de requêtes SQL"
-          TopLeft="531.178571428572,90.5" />
+          TopLeft="523.678571428572,19.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte]"
-          TopLeft="644.5,306.75">
+          TopLeft="644.5,336.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.5"
+              EndConnector="0,38.75"
               Start="0,0"
-              End="0,25">
+              End="0,31.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Contrainte 1]"
-          TopLeft="654.339285714286,133.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,54.75"
-              Start="0,0"
-              End="0,47.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,47.25" />
+                    End="0,31.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7056,18 +8891,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 2]"
-          TopLeft="644,381.25">
+          TopLeft="642.75,417.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,28.25"
+              EndConnector="0,37"
               Start="0,0"
-              End="0,20.75">
+              End="0,29.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.75" />
+                    End="0,29.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7078,18 +8913,92 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 3]"
-          TopLeft="648.375,230.25">
+          TopLeft="647.125,267.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.5"
+              EndConnector="0,27"
               Start="0,0"
-              End="0,27">
+              End="0,19.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27" />
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Commune"
+          TopLeft="586.25,158.75" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 4]"
+          TopLeft="649.625,200.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.9999999999999"
+              Start="0,0"
+              End="0,17.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Population"
+          TopLeft="586.25,86.25" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="651.214285714286,62.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 5]"
+          TopLeft="651.5,128.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.5000000000001"
+              Start="0,0"
+              End="0,23.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7105,7 +9014,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Activity_parent">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42"
           Id="Package\Activity_parent\Source Excel"
@@ -7145,7 +9054,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7181,7 +9092,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Conteneur de boucles Foreach\Activity">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\Conteneur de boucles Foreach\Activity\Destination OLE DB"
@@ -7225,7 +9136,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -7259,7 +9172,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7295,7 +9210,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Conteneur de boucles Foreach\Adresses">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42"
           Id="Package\Conteneur de boucles Foreach\Adresses\Source Excel"
@@ -7335,7 +9250,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7371,7 +9288,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Conteneur de boucles Foreach\Dates">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\Conteneur de boucles Foreach\Dates\Destination OLE DB"
@@ -7411,7 +9328,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7447,7 +9366,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Conteneur de boucles Foreach\Identity">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42"
           Id="Package\Conteneur de boucles Foreach\Identity\Source Excel"
@@ -7487,7 +9406,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7523,7 +9444,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Conteneur de boucles Foreach\Leaders">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42"
           Id="Package\Conteneur de boucles Foreach\Leaders\Source Excel"
@@ -7563,7 +9484,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7599,7 +9522,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Conteneur de boucles Foreach\Management_departement">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42"
           Id="Package\Conteneur de boucles Foreach\Management_departement\Source Excel"
@@ -7639,7 +9562,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7675,7 +9600,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Conteneur de boucles Foreach\websites">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42"
           Id="Package\Conteneur de boucles Foreach\websites\Source Excel"
@@ -7715,7 +9640,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7751,7 +9678,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Greffe">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="177,42"
           Id="Package\Greffe\Destination OLE DB"
@@ -7791,7 +9718,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7827,15 +9756,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
     design-time-name="Package\Subventions">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Subventions\Destination OLE DB"
-          TopLeft="364,249" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="144,42"
           Id="Package\Subventions\Source Excel"
           TopLeft="289,126" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Subventions\Destination OLE DB"
+          TopLeft="364,249" />
         <EdgeLayout
           Id="Package\Subventions.Paths[Sortie de source Excel]"
           TopLeft="361,168">
@@ -7867,7 +9796,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7888,6 +9819,146 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Subventions\Source Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Commune">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Commune\Source Excel"
+          TopLeft="291,138" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Commune\Destination OLE DB"
+          TopLeft="278,240" />
+        <EdgeLayout
+          Id="Package\Commune.Paths[Sortie de source Excel]"
+          TopLeft="364.75,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Commune\Source Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Commune\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Population">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Population\Source Excel"
+          TopLeft="337,135" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Population\Destination OLE DB"
+          TopLeft="340,245" />
+        <EdgeLayout
+          Id="Package\Population.Paths[Sortie de source Excel]"
+          TopLeft="409,177">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19.5,68"
+              Start="0,0"
+              End="19.5,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="4,34" />
+                  <mssgle:LineSegment
+                    End="15.5,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.5,34"
+                    Point2="19.5,34"
+                    Point3="19.5,38" />
+                  <mssgle:LineSegment
+                    End="19.5,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Population\Source Excel">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Population\Destination OLE DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
