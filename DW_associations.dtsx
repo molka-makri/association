@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{3BCF2349-7E45-444A-A940-48FA886ACAAF}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{73AF15A4-12D4-4925-B3AC-81B2F482C4BE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -43,6 +43,1330 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\alimentation greffe dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{C7D6AC98-4EB0-46FD-B448-8C780F561FA1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="alimentation greffe dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Activity dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{943A2E53-E4A3-41A7-BE84-A74D24D8DC65}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Activity dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load adress dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{2B9F5955-9110-4487-949D-07583A222D25}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load adress dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load adress dimension\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrs_complement]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_complement"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_complement]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_complement]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_complement]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrs_complement) ? "INCONNU" : UPPER(TRIM(adrs_complement))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrs_numvoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_numvoie"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_numvoie]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_numvoie]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_numvoie]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrs_numvoie) ? "INCONNU" : UPPER(TRIM(adrs_numvoie))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrs_repetition]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_repetition"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_repetition]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_repetition]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_repetition]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrs_repetition) ? "INCONNU" : UPPER(TRIM(adrs_repetition))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrs_typevoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_typevoie"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_typevoie]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_typevoie]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_typevoie]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrs_typevoie) ? "INCONNU" : UPPER(TRIM(adrs_typevoie))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrs_libvoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_libvoie"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libvoie]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libvoie]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libvoie]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrs_libvoie) ? "INCONNU" : UPPER(TRIM(adrs_libvoie))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrs_codeinsee]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_codeinsee"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codeinsee]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codeinsee]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codeinsee]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrs_codeinsee) ? "INCONNU" : UPPER(TRIM(adrs_codeinsee))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrs_codepostal]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_codepostal"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codepostal]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codepostal]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codepostal]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrs_codepostal) ? "INCONNU" : UPPER(TRIM(adrs_codepostal))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrs_libcommune]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_libcommune"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libcommune]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libcommune]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libcommune]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrs_libcommune) ? "INCONNU" : UPPER(TRIM(adrs_libcommune))</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[adrg_pays]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrg_pays"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrg_pays]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrg_pays]}) ? "INCONNU" : [UPPER]([TRIM](#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrg_pays]}))</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(adrg_pays) ? "INCONNU" : UPPER(TRIM(adrg_pays))</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load adress dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load adress dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load adress dimension\Commande OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Commande OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_address]
+SET 
+    [complement] = ?,
+    [num_voie] = ?,
+    [type_voie] = ?,
+    [lib_voie] = ?,
+    [lib_commune] = ?,
+    [code_insee] = ?,
+    [code_postal] = ?,
+    [country] = ?
+WHERE [code_address] = ?
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load adress dimension\Commande OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[adrs_complement]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_complement"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_complement]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[adrs_numvoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_numvoie"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_numvoie]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[adrs_typevoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_typevoie"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_typevoie]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[adrs_libvoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_libvoie"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libvoie]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[adrs_libcommune]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_libcommune"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libcommune]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[adrs_codeinsee]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_codeinsee"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codeinsee]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[adrs_codepostal]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_codepostal"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codepostal]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[adrg_pays]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrg_pays"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_7]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrg_pays]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[code_address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="code_address"
+                      externalMetadataColumnId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_8]"
+                      lineageId="Package\Load adress dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_address]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_6]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_7]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_8]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load adress dimension\Commande OLE DB.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load adress dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load adress dimension\Dw_adress"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Dw_adress"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Dim_address]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load adress dimension\Dw_adress.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[code_address]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[adrs_complement]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_complement"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[complement]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_complement]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[adrs_numvoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_numvoie"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[num_voie]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_numvoie]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[adrs_typevoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_typevoie"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[type_voie]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_typevoie]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[adrs_libvoie]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_libvoie"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[lib_voie]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libvoie]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[adrs_libcommune]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_libcommune"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[lib_commune]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libcommune]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[adrs_codeinsee]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_codeinsee"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[code_insee]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codeinsee]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[adrs_codepostal]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrs_codepostal"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[code_postal]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codepostal]" />
+                    <inputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].Columns[adrg_pays]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="adrg_pays"
+                      externalMetadataColumnId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[country]"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrg_pays]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[pk_address]"
+                      dataType="i4"
+                      name="pk_address" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[code_address]"
+                      dataType="wstr"
+                      length="255"
+                      name="code_address" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[complement]"
+                      dataType="wstr"
+                      length="255"
+                      name="complement" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[num_voie]"
+                      dataType="wstr"
+                      length="255"
+                      name="num_voie" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[type_voie]"
+                      dataType="wstr"
+                      length="255"
+                      name="type_voie" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[lib_voie]"
+                      dataType="wstr"
+                      length="255"
+                      name="lib_voie" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[lib_commune]"
+                      dataType="wstr"
+                      length="255"
+                      name="lib_commune" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[code_insee]"
+                      dataType="wstr"
+                      length="255"
+                      name="code_insee" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[code_postal]"
+                      dataType="wstr"
+                      length="255"
+                      name="code_postal" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB].ExternalColumns[country]"
+                      dataType="wstr"
+                      length="255"
+                      name="country" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load adress dimension\Dw_adress.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\Dw_adress.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\Dw_adress.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\Dw_adress.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load adress dimension\Recherche"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_address]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_address]) [refTable]
+where [refTable].[code_address] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="pk_address" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_address" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="complement" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="num_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="type_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lib_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lib_commune" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_insee" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_postal" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load adress dimension\Recherche.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load adress dimension\Recherche.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load adress dimension\Recherche.Inputs[Entrée de recherche].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">code_address</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load adress dimension\Recherche.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Load adress dimension\Recherche.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load adress dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="255"
+                      lineageId="Package\Load adress dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_address]"
+                      name="code_address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">code_address</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load adress dimension\Recherche.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Load adress dimension\Recherche.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load adress dimension\Recherche.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Load adress dimension\Recherche.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load adress dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load adress dimension\SA_address"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="SA_address"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Adresses]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load adress dimension\SA_address.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Associations]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Associations]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[id]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_complement]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_complement]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_complement]"
+                      name="adrs_complement"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_numvoie]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_numvoie]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_numvoie]"
+                      name="adrs_numvoie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_repetition]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_repetition]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_repetition]"
+                      name="adrs_repetition"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_typevoie]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_typevoie]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_typevoie]"
+                      name="adrs_typevoie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libvoie]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_libvoie]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libvoie]"
+                      name="adrs_libvoie"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codeinsee]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_codeinsee]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codeinsee]"
+                      name="adrs_codeinsee"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codepostal]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_codepostal]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_codepostal]"
+                      name="adrs_codepostal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libcommune]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_libcommune]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrs_libcommune]"
+                      name="adrs_libcommune"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrg_pays]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_pays]"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].Columns[adrg_pays]"
+                      name="adrg_pays"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="255"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_complement]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_complement" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_numvoie]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_numvoie" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_repetition]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_repetition" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_typevoie]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_typevoie" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_libvoie]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_libvoie" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_distrib]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_distrib" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_codeinsee]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_codeinsee" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_codepostal]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_codepostal" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_libcommune]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrs_libcommune" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_declarant]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrg_declarant" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_complemid]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrg_complemid" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_complemgeo]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrg_complemgeo" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_libvoie]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrg_libvoie" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_distrib]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrg_distrib" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_codepostal]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrg_codepostal" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_achemine]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrg_achemine" />
+                    <externalMetadataColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_pays]"
+                      dataType="wstr"
+                      length="255"
+                      name="adrg_pays" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_complement]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_complement]"
+                      name="adrs_complement" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_numvoie]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_numvoie]"
+                      name="adrs_numvoie" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_repetition]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_repetition]"
+                      name="adrs_repetition" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_typevoie]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_typevoie]"
+                      name="adrs_typevoie" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_libvoie]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_libvoie]"
+                      name="adrs_libvoie" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_codeinsee]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_codeinsee]"
+                      name="adrs_codeinsee" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_codepostal]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_codepostal]"
+                      name="adrs_codepostal" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_libcommune]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrs_libcommune]"
+                      name="adrs_libcommune" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrg_pays]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[adrg_pays]"
+                      name="adrg_pays" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load adress dimension\SA_address.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load adress dimension.Paths[Sortie de colonne dérivée]"
+              endId="Package\Load adress dimension\Recherche.Inputs[Entrée de recherche]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Load adress dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Load adress dimension.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Load adress dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Load adress dimension\Recherche.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Load adress dimension.Paths[Sortie de recherche sans correspondance]"
+              endId="Package\Load adress dimension\Dw_adress.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\Load adress dimension\Recherche.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\Load adress dimension.Paths[Sortie de source OLE DB]"
+              endId="Package\Load adress dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\Load adress dimension\SA_address.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load grant dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{0C2A4AF4-CB91-4A55-B16D-367D0CE43058}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load grant dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load identity dimension"
       DTS:CreationName="Microsoft.Pipeline"
@@ -150,13 +1474,13 @@
                           containsID="true"
                           dataType="System.String"
                           description="Expression de colonne dérivée"
-                          name="Expression">[UPPER]([TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre]}))</property>
+                          name="Expression">[ISNULL](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre]}) ? "INCONNU" : [TRIM](#{Package\Load identity dimension\SA_identity.Outputs[Sortie de source OLE DB].Columns[titre]})</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Expression claire de colonne dérivée"
                           expressionType="Notify"
-                          name="FriendlyExpression">UPPER(TRIM(titre))</property>
+                          name="FriendlyExpression">ISNULL(titre) ? "INCONNU" : TRIM(titre)</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -1324,6 +2648,980 @@ WHERE titre IS NOT NULL;</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Load managment_department dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{2D2569C8-A055-4C38-8921-817AA1CB9EB7}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load managment_department dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load social_obj dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{6DFFDE8E-534C-48C8-87EA-0768731315C3}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load social_obj dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load social_obj_parent dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{28BE29A8-9172-4645-AD4B-1F6D760DDD81}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load social_obj_parent dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load social_obj_parent dimension\SA_object_parent"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="SA_object_parent"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Activity_parent]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load social_obj_parent dimension\SA_object_parent.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Associations]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Associations]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].Columns[dentifiant_objet_social_parent]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].ExternalColumns[dentifiant_objet_social_parent]"
+                      length="255"
+                      lineageId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].Columns[dentifiant_objet_social_parent]"
+                      name="dentifiant_objet_social_parent"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].Columns[Libellé_objet_social_parent]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].ExternalColumns[Libellé_objet_social_parent]"
+                      length="255"
+                      lineageId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].Columns[Libellé_objet_social_parent]"
+                      name="Libellé_objet_social_parent"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].ExternalColumns[dentifiant_objet_social_parent]"
+                      dataType="wstr"
+                      length="255"
+                      name="dentifiant_objet_social_parent" />
+                    <externalMetadataColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].ExternalColumns[Libellé_objet_social_parent]"
+                      dataType="wstr"
+                      length="255"
+                      name="Libellé_objet_social_parent" />
+                    <externalMetadataColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].ExternalColumns[Identifiant_objet_social]"
+                      dataType="wstr"
+                      length="255"
+                      name="Identifiant_objet_social" />
+                    <externalMetadataColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie de source OLE DB].ExternalColumns[Libellé_objet_social]"
+                      dataType="wstr"
+                      length="255"
+                      name="Libellé_objet_social" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB].Columns[dentifiant_objet_social_parent]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB].Columns[dentifiant_objet_social_parent]"
+                      name="dentifiant_objet_social_parent" />
+                    <outputColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB].Columns[Libellé_objet_social_parent]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB].Columns[Libellé_objet_social_parent]"
+                      name="Libellé_objet_social_parent" />
+                    <outputColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load social_obj_parent dimension\SA_object_parent.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load website dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tâche de flux de données"
+      DTS:DTSID="{36747CD1-7CA9-4203-8FF7-579A3D4937F5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load website dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load website dimension\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Load website dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load website dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[siteweb]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="siteweb"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[siteweb]" />
+                    <inputColumn
+                      refId="Package\Load website dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[Publication sur le web]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Publication sur le web"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\Load website dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siteweb_clean]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siteweb_clean]"
+                      name="siteweb_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[siteweb]}) || [TRIM](#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[siteweb]}) == "" ? "Inconnu" : #{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[siteweb]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(siteweb) || TRIM(siteweb) == "" ? "Inconnu" : siteweb</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Publication sur le web_clean]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Publication sur le web_clean]"
+                      name="Publication sur le web_clean"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[ISNULL](#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]}) || [TRIM](#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]}) == "" ? 0 : (DT_I4)#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL([Publication sur le web]) || TRIM([Publication sur le web]) == "" ? 0 : (DT_I4)[Publication sur le web]</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\Load website dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load website dimension\Commande OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Commande OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_website]
+SET 
+    [website] = ?,
+    [publication_web] = ?
+WHERE 
+    [code_website] = ?
+</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load website dimension\Commande OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[siteweb_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="siteweb_clean"
+                      externalMetadataColumnId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siteweb_clean]" />
+                    <inputColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[Publication sur le web_clean]"
+                      cachedDataType="i4"
+                      cachedName="Publication sur le web_clean"
+                      externalMetadataColumnId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Publication sur le web_clean]" />
+                    <inputColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[code_website]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="code_website"
+                      externalMetadataColumnId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_website]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="255"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load website dimension\Commande OLE DB.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load website dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load website dimension\Dw_website"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
+              description="Destination OLE DB"
+              name="Dw_website"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[Dim_website]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les valeurs fournies pour les colonnes d'identité seront copiées à la destination. Si la valeur est définie à False, les valeurs des colonnes d'identité seront générées automatiquement à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indique si les colonnes contenant la valeur NULL auront cette valeur NULL copiée à la destination. Si la valeur est définie à False, les colonnes contenant la valeur NULL auront leurs valeurs par défaut insérées à la destination. Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie les options à utiliser avec le chargement rapide.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie quand les validations sont émises pendant l'insertion des données.  Une valeur égale à 0 spécifie qu'une validation sera émise à la fin de l'insertion des données.  Ne s'applique que si le chargement rapide est activé."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load website dimension\Dw_website.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB]"
+                  errorOrTruncationOperation="Insérer"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de destination OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[code_website]"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].Columns[siteweb_clean]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="siteweb_clean"
+                      externalMetadataColumnId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[website]"
+                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siteweb_clean]" />
+                    <inputColumn
+                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].Columns[Publication sur le web_clean]"
+                      cachedDataType="i4"
+                      cachedName="Publication sur le web_clean"
+                      externalMetadataColumnId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[publication_web]"
+                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Publication sur le web_clean]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[pk_website]"
+                      dataType="i4"
+                      name="pk_website" />
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[code_website]"
+                      dataType="wstr"
+                      length="255"
+                      name="code_website" />
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[website]"
+                      dataType="wstr"
+                      length="255"
+                      name="website" />
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[publication_web]"
+                      dataType="wstr"
+                      length="255"
+                      name="publication_web" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load website dimension\Dw_website.Outputs[Sortie d'erreur de destination OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de destination OLE DB"
+                  synchronousInputId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load website dimension\Dw_website.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\Dw_website.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load website dimension\Dw_website.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\Dw_website.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load website dimension\Recherche"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Recherche;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;6"
+              description="Joint des colonnes supplémentaires au flux de données en recherchant des valeurs dans une table. Par exemple, joignez la colonne 'id employé' à la table des employés afin d'obtenir la 'date d'embauche' et le 'nom de l'employé'. Nous recommandons cette transformation lorsque la table de recherche peut être stockée en mémoire."
+              name="Recherche"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Spécifie l'instruction SQL qui génère la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Dim_website]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie une instruction SQL qui utilise des paramètres pour générer la table de correspondance."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Dim_website]) [refTable]
+where [refTable].[code_website] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le type de cache de la table de correspondance."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie comment la transformation de recherche gère les lignes sans entrées correspondantes dans le jeu de données de référence."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le pourcentage du cache alloué aux lignes sans entrées correspondantes dans le dataset de référence."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 32 bits."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Utilisation maximale de la mémoire pour le cache de référence sur une plateforme 64 bits."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indique si les métadonnées sont à référencer en format XML."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="pk_website" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_website" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="website" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="publication_web" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
+                  name="ParameterMap">#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[id]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Détermine si les clés dupliquées dans les données de référence doivent être traitées en tant qu'erreurs lorsque le mode Cache complet est utilisé."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load website dimension\Recherche.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Gestionnaire de connexions utilisé pour accéder aux données de correspondance."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load website dimension\Recherche.Inputs[Entrée de recherche]"
+                  name="Entrée de recherche">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load website dimension\Recherche.Inputs[Entrée de recherche].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="id"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[id]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">code_website</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance]"
+                  errorOrTruncationOperation="Recherche"
+                  exclusionGroup="1"
+                  name="Sortie de recherche avec correspondance"
+                  synchronousInputId="Package\Load website dimension\Recherche.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[pk_website]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[pk_website]"
+                      name="pk_website"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">pk_website</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_website]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="255"
+                      lineageId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_website]"
+                      name="code_website"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">code_website</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[website]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="255"
+                      lineageId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[website]"
+                      name="website"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">website</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[publication_web]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      length="255"
+                      lineageId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[publication_web]"
+                      name="publication_web"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">publication_web</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche sans correspondance]"
+                  description="Sortie de recherche gérant les lignes sans entrées correspondantes dans le dataset de référence. Utilisez cette sortie lorsque la propriété NoMatchBehavior a la valeur « Envoyez les lignes sans entrées correspondantes dans la sortie sans correspondance »."
+                  exclusionGroup="1"
+                  name="Sortie de recherche sans correspondance"
+                  synchronousInputId="Package\Load website dimension\Recherche.Inputs[Entrée de recherche]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Load website dimension\Recherche.Outputs[Sortie d'erreur de recherche]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de recherche"
+                  synchronousInputId="Package\Load website dimension\Recherche.Inputs[Entrée de recherche]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load website dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load website dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\Recherche.Outputs[Sortie d'erreur de recherche].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load website dimension\SA_website"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Source OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;7"
+              description="Source OLE DB"
+              name="SA_website"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowset">[dbo].[websites]</property>
+                <property
+                  dataType="System.String"
+                  description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable contenant la commande SQL à exécuter."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Force l'utilisation de la valeur de propriété DefaultCodePage lors de la description des données caractères."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie le mode utilisé pour accéder à la base de données."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Mappages entre les paramètres de la commande SQL et les variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load website dimension\SA_website.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.Associations]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.Associations]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB]"
+                  name="Sortie de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[siteweb]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[siteweb]"
+                      length="255"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[siteweb]"
+                      name="siteweb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[Publication sur le web]"
+                      length="255"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]"
+                      name="Publication sur le web"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[id]"
+                      length="255"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[siteweb]"
+                      dataType="wstr"
+                      length="255"
+                      name="siteweb" />
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[Publication sur le web]"
+                      dataType="wstr"
+                      length="255"
+                      name="Publication sur le web" />
+                    <externalMetadataColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="255"
+                      name="id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB]"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de source OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[siteweb]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[siteweb]"
+                      name="siteweb" />
+                    <outputColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[Publication sur le web]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[Publication sur le web]"
+                      name="Publication sur le web" />
+                    <outputColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[id]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie d'erreur de source OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load website dimension.Paths[Sortie de colonne dérivée]"
+              endId="Package\Load website dimension\Recherche.Inputs[Entrée de recherche]"
+              name="Sortie de colonne dérivée"
+              startId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\Load website dimension.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Load website dimension.Paths[Sortie de recherche sans correspondance]"
+              endId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB]"
+              name="Sortie de recherche sans correspondance"
+              startId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche sans correspondance]" />
+            <path
+              refId="Package\Load website dimension.Paths[Sortie de source OLE DB]"
+              endId="Package\Load website dimension\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+              name="Sortie de source OLE DB"
+              startId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Tâche d'exécution de requêtes SQL"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tâche d'exécution de requêtes SQL"
@@ -1337,7 +3635,7 @@ WHERE titre IS NOT NULL;</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{A26FB6EF-7468-4040-8FF8-E8CC77D8ADC7}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Dim_identity;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="DELETE FROM [dbo].[Dim_address]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1345,11 +3643,19 @@ WHERE titre IS NOT NULL;</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Contrainte]"
       DTS:CreationName=""
-      DTS:DTSID="{06DDD83F-0717-458A-84BA-44573CA0C2B3}"
-      DTS:From="Package\Tâche d'exécution de requêtes SQL"
+      DTS:DTSID="{AC78EA5A-DF08-4F24-A13C-62D59E0EA33F}"
+      DTS:From="Package\Load social_obj_parent dimension"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Contrainte"
-      DTS:To="Package\Load identity dimension" />
+      DTS:To="Package\Load social_obj dimension" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Contrainte 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{436096B1-E449-4E46-8073-2E0F03E9577B}"
+      DTS:From="Package\Load social_obj dimension"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Contrainte 1"
+      DTS:To="Package\Load Activity dimension" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Cette section CDATA contient des informations sur la disposition du package. Elle comprend des informations telles que les coordonnées (x,y), la largeur et la hauteur.-->
@@ -1362,29 +3668,95 @@ WHERE titre IS NOT NULL;</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="246,42"
+          Id="Package\Load social_obj_parent dimension"
+          TopLeft="582,127" />
         <NodeLayout
           Size="195,42"
           Id="Package\Load identity dimension"
-          TopLeft="321,226" />
+          TopLeft="27,176" />
+        <NodeLayout
+          Size="197,42"
+          Id="Package\Load website dimension"
+          TopLeft="31,269" />
         <NodeLayout
           Size="254,42"
           Id="Package\Tâche d'exécution de requêtes SQL"
-          TopLeft="296,87" />
+          TopLeft="257,87" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Load adress dimension"
+          TopLeft="34,354" />
+        <NodeLayout
+          Size="223,42"
+          Id="Package\alimentation greffe dimension"
+          TopLeft="302,183" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Load grant dimension"
+          TopLeft="308,264" />
+        <NodeLayout
+          Size="260,42"
+          Id="Package\Load managment_department dimension"
+          TopLeft="300,353" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Load social_obj dimension"
+          TopLeft="606,232" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte]"
-          TopLeft="420.75,129">
+          TopLeft="707.75,169">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,97"
+              EndConnector="0,63"
               Start="0,0"
-              End="0,89.5">
+              End="0,55.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,89.5" />
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Load Activity dimension"
+          TopLeft="632,354" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 1]"
+          TopLeft="710.5,274">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="19,80"
+              Start="0,0"
+              End="19,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="4,40" />
+                  <mssgle:LineSegment
+                    End="15,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15,40"
+                    Point2="19,40"
+                    Point3="19,44" />
+                  <mssgle:LineSegment
+                    End="19,72.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1397,10 +3769,47 @@ WHERE titre IS NOT NULL;</property>
     </LayoutInfo>
   </Package>
   <TaskHost
+    design-time-name="Package\Load social_obj_parent dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Load social_obj_parent dimension\SA_object_parent"
+          TopLeft="343,100" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load social_obj_parent dimension\SA_object_parent">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Load identity dimension">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Load identity dimension\Recherche"
+          TopLeft="342.428571428571,244.428571428571" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Load identity dimension\Dw_identity"
+          TopLeft="200.979020979021,359.58041958042" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Load identity dimension\Commande OLE DB"
+          TopLeft="455.307692307692,358.153846153846" />
         <NodeLayout
           Size="135,42"
           Id="Package\Load identity dimension\SA_identity"
@@ -1428,122 +3837,142 @@ WHERE titre IS NOT NULL;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.5801171875,6.91845703125,71.160234375,11.6630859375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Load identity dimension\Recherche"
-          TopLeft="342.428571428571,258.428571428571" />
-        <NodeLayout
-          Size="136,42"
-          Id="Package\Load identity dimension\Dw_identity"
-          TopLeft="200.979020979021,359.58041958042" />
-        <EdgeLayout
-          Id="Package\Load identity dimension.Paths[Sortie de colonne dérivée]"
-          TopLeft="407.464285714286,208">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.4285714285714"
-              Start="0,0"
-              End="0,42.9285714285714">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.9285714285714" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.5801171875,15.6327427455357,71.160234375,11.6630859375"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load identity dimension.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="387.761904761905,300.428571428571">
+          TopLeft="387.761904761904,286.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-118.782883782884,59.1518481518482"
+              EndConnector="-118.782883782883,73.151848151849"
               Start="0,0"
-              End="-118.782883782884,51.6518481518482">
+              End="-118.782883782883,65.651848151849">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.0857824809921" />
+                    End="0,25.7863812833876" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.0857824809921"
-                    Point2="0,24.0857824809921"
-                    Point3="-4,24.0857824809921" />
+                    Point1="0,25.7863812833876"
+                    Point2="0,29.7863812833876"
+                    Point3="-4,29.7863812833876" />
                   <mssgle:LineSegment
-                    End="-114.782883782884,24.0857824809921" />
+                    End="-114.782883782883,29.7863812833876" />
                   <mssgle:CubicBezierSegment
-                    Point1="-114.782883782884,24.0857824809921"
-                    Point2="-118.782883782884,24.0857824809921"
-                    Point3="-118.782883782884,28.0857824809921" />
+                    Point1="-114.782883782883,29.7863812833876"
+                    Point2="-118.782883782883,29.7863812833876"
+                    Point3="-118.782883782883,33.7863812833876" />
                   <mssgle:LineSegment
-                    End="-118.782883782884,51.6518481518482" />
+                    End="-118.782883782883,65.651848151849" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-191.093844235192,29.0857824809921,263.4048046875,11.6630859375"
+              BoundingBox="-150.893453610192,34.7863812833876,183.0040234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Load identity dimension\Commande OLE DB"
-          TopLeft="432.307692307692,356.153846153846" />
         <EdgeLayout
           Id="Package\Load identity dimension.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="429.095238095238,300.428571428571">
+          TopLeft="429.095238095238,286.428571428571">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="92.7124542124542,55.7252747252747"
+              EndConnector="115.712454212454,71.725274725275"
               Start="0,0"
-              End="92.7124542124542,48.2252747252747">
+              End="115.712454212454,64.225274725275">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.6905310258604" />
+                    End="0,25.2055010857407" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,18.6905310258604"
-                    Point2="0,22.6905310258604"
-                    Point3="4,22.6905310258604" />
+                    Point1="0,25.2055010857407"
+                    Point2="0,29.2055010857407"
+                    Point3="4,29.2055010857407" />
                   <mssgle:LineSegment
-                    End="88.7124542124542,22.6905310258604" />
+                    End="111.712454212454,29.2055010857407" />
                   <mssgle:CubicBezierSegment
-                    Point1="88.7124542124542,22.6905310258604"
-                    Point2="92.7124542124542,22.6905310258604"
-                    Point3="92.7124542124542,26.6905310258604" />
+                    Point1="111.712454212454,29.2055010857407"
+                    Point2="115.712454212454,29.2055010857407"
+                    Point3="115.712454212454,33.2055010857407" />
                   <mssgle:LineSegment
-                    End="92.7124542124542,48.2252747252747" />
+                    End="115.712454212454,64.225274725275" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-45.3207846125229,27.6905310258604,183.3540234375,11.609375"
+              BoundingBox="-33.8207846125229,34.2055010857407,183.3540234375,11.609375"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load identity dimension.Paths[Sortie de colonne dérivée]"
+          TopLeft="407.464285714285,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.428571428571"
+              Start="0,0"
+              End="0,28.928571428571">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.928571428571" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load identity dimension\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_identity]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load identity dimension\Dw_identity">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load identity dimension\SA_identity">
     <Properties>
@@ -1557,8 +3986,389 @@ WHERE titre IS NOT NULL;</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load website dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Load website dimension\Commande OLE DB"
+          TopLeft="511,320" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Load website dimension\Recherche"
+          TopLeft="384,240" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Load website dimension\SA_website"
+          TopLeft="371,66" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load website dimension\Colonne dérivée"
+          TopLeft="368,152" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Load website dimension\Dw_website"
+          TopLeft="245,316" />
+        <EdgeLayout
+          Id="Package\Load website dimension.Paths[Sortie de source OLE DB]"
+          TopLeft="439.5,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8,44"
+              Start="0,0"
+              End="8,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
+                  <mssgle:LineSegment
+                    End="4,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4,22"
+                    Point2="8,22"
+                    Point3="8,26" />
+                  <mssgle:LineSegment
+                    End="8,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load website dimension.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="429.333333333333,282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-115.333333333333,34"
+              Start="0,0"
+              End="-115.333333333333,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.84431137724551" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.84431137724551"
+                    Point2="0,13.8443113772455"
+                    Point3="-4,13.8443113772455" />
+                  <mssgle:LineSegment
+                    End="-111.333333333333,13.8443113772455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-111.333333333333,13.8443113772455"
+                    Point2="-115.333333333333,13.8443113772455"
+                    Point3="-115.333333333333,17.8443113772455" />
+                  <mssgle:LineSegment
+                    End="-115.333333333333,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-149.168678385417,18.8443113772455,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load website dimension.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="470.666666666667,282">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.833333333333,38"
+              Start="0,0"
+              End="129.833333333333,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.4730538922156" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.4730538922156"
+                    Point2="0,15.4730538922156"
+                    Point3="4,15.4730538922156" />
+                  <mssgle:LineSegment
+                    End="125.833333333333,15.4730538922156" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.833333333333,15.4730538922156"
+                    Point2="129.833333333333,15.4730538922156"
+                    Point3="129.833333333333,19.4730538922156" />
+                  <mssgle:LineSegment
+                    End="129.833333333333,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-26.7603450520835,20.4730538922156,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load website dimension.Paths[Sortie de colonne dérivée]"
+          TopLeft="448.75,194">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load identity dimension\Recherche">
+    design-time-name="Package\Load website dimension\SA_website">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load website dimension\Dw_website">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load website dimension\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_website]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load adress dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Load adress dimension\SA_address"
+          TopLeft="380,75" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load adress dimension\Colonne dérivée"
+          TopLeft="382.909090909091,154.909090909091" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Load adress dimension\Recherche"
+          TopLeft="394,241" />
+        <EdgeLayout
+          Id="Package\Load adress dimension.Paths[Sortie de source OLE DB]"
+          TopLeft="449.5,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.9090909090909,37.9090909090909"
+              Start="0,0"
+              End="12.9090909090909,30.4090909090909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9545454545455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.9545454545455"
+                    Point2="0,18.9545454545455"
+                    Point3="4,18.9545454545455" />
+                  <mssgle:LineSegment
+                    End="8.90909090909093,18.9545454545455" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.90909090909093,18.9545454545455"
+                    Point2="12.9090909090909,18.9545454545455"
+                    Point3="12.9090909090909,22.9545454545455" />
+                  <mssgle:LineSegment
+                    End="12.9090909090909,30.4090909090909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load adress dimension.Paths[Sortie de colonne dérivée]"
+          TopLeft="461.204545454545,196.909090909091">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.0909090909091"
+              Start="0,0"
+              End="0,36.5909090909091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5909090909091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Load adress dimension\Commande OLE DB"
+          TopLeft="511.818181818182,352.727272727273" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Load adress dimension\Dw_adress"
+          TopLeft="236.363636363636,337.272727272727" />
+        <EdgeLayout
+          Id="Package\Load adress dimension.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="439.333333333333,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-135.969696969697,54.2727272727273"
+              Start="0,0"
+              End="-135.969696969697,46.7727272727273">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0990745781165" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.0990745781165"
+                    Point2="0,22.0990745781165"
+                    Point3="-4,22.0990745781165" />
+                  <mssgle:LineSegment
+                    End="-131.969696969697,22.0990745781165" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-131.969696969697,22.0990745781165"
+                    Point2="-135.969696969697,22.0990745781165"
+                    Point3="-135.969696969697,26.0990745781165" />
+                  <mssgle:LineSegment
+                    End="-135.969696969697,46.7727272727273" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-159.486860203598,27.0990745781165,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load adress dimension.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="480.666666666667,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.651515151515,69.7272727272727"
+              Start="0,0"
+              End="120.651515151515,62.2272727272727">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3919433859554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.3919433859554"
+                    Point2="0,28.3919433859554"
+                    Point3="4,28.3919433859554" />
+                  <mssgle:LineSegment
+                    End="116.651515151515,28.3919433859554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.651515151515,28.3919433859554"
+                    Point2="120.651515151515,28.3919433859554"
+                    Point3="120.651515151515,32.3919433859554" />
+                  <mssgle:LineSegment
+                    End="120.651515151515,62.2272727272727" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-31.3512541429924,33.3919433859554,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="s"
+          ParentId="Package\Load adress dimension"
+          FontInfo="{assembly:Null}"
+          Size="34,60"
+          Id="5676f4da-910f-457b-a3cd-c73f16a92749"
+          TopLeft="283.636363636364,217.272727272727" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load adress dimension\SA_address">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load adress dimension\Recherche">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -1568,7 +4378,7 @@ WHERE titre IS NOT NULL;</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Dim_identity]</Value>
+          type="q3:string">[dbo].[Dim_address]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -1581,7 +4391,7 @@ WHERE titre IS NOT NULL;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load identity dimension\Dw_identity">
+    design-time-name="Package\Load adress dimension\Dw_adress">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
