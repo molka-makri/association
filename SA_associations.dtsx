@@ -12,8 +12,8 @@
   DTS:MaxErrorCount="0"
   DTS:ObjectName="SA_associations"
   DTS:PackageType="5"
-  DTS:VersionBuild="205"
-  DTS:VersionGUID="{6F7F4FCA-1701-442A-90FC-517ADCD38EDF}">
+  DTS:VersionBuild="215"
+  DTS:VersionGUID="{64AA1090-9776-4D67-9D70-F30B742F5775}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -467,6 +467,7 @@
       DTS:refId="Package\Activity_parent"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
       DTS:DTSID="{213AAB6C-A662-4FD4-9A52-465DF7403BF3}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -799,6 +800,7 @@
       DTS:refId="Package\Commune"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
       DTS:DTSID="{BDF3604E-974F-45BE-9942-E6D68A2B2B79}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2281,6 +2283,7 @@
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:DelayValidation="True"
       DTS:Description="Conteneur de boucles Foreach"
+      DTS:Disabled="True"
       DTS:DTSID="{63D4F084-C67C-4428-A6C8-F7672965C8E4}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
@@ -7009,10 +7012,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:DelayValidation="True"
       DTS:Description="Conteneur de boucles Foreach"
+      DTS:Disabled="True"
       DTS:DTSID="{6A2EB482-C622-489B-9BA2-FBB630CC1DB7}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
-      DTS:MaxErrorCount="0"
       DTS:ObjectName="Conteneur de boucles Foreach 1">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
@@ -7060,13 +7063,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                     <input
                       refId="Package\Conteneur de boucles Foreach 1\association complete\Conversion de données.Inputs[Entrée de conversion de données]"
                       name="Entrée de conversion de données">
-                      <inputColumns>
-                        <inputColumn
-                          refId="Package\Conteneur de boucles Foreach 1\association complete\Conversion de données.Inputs[Entrée de conversion de données].Columns[objet]"
-                          cachedDataType="nText"
-                          cachedName="objet"
-                          lineageId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].Columns[objet]" />
-                      </inputColumns>
                       <externalMetadataColumns />
                     </input>
                   </inputs>
@@ -7076,29 +7072,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                       exclusionGroup="1"
                       name="Sortie de conversion de données"
                       synchronousInputId="Package\Conteneur de boucles Foreach 1\association complete\Conversion de données.Inputs[Entrée de conversion de données]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Conteneur de boucles Foreach 1\association complete\Conversion de données.Outputs[Sortie de conversion de données].Columns[Copy of objet]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          length="4000"
-                          lineageId="Package\Conteneur de boucles Foreach 1\association complete\Conversion de données.Outputs[Sortie de conversion de données].Columns[Copy of objet]"
-                          name="Copy of objet"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.Int32"
-                              description="Spécifie la colonne d'entrée utilisée comme source de données pour la conversion."
-                              name="SourceInputColumnLineageID">#{Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].Columns[objet]}</property>
-                            <property
-                              dataType="System.Boolean"
-                              description="Indique si la colonne utilise les routines d'analyse les plus rapides, avec des paramètres régionaux neutres."
-                              name="FastParse">false</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
                       <externalMetadataColumns />
                     </output>
                     <output
@@ -7253,12 +7226,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           cachedName="titre_court"
                           externalMetadataColumnId="Package\Conteneur de boucles Foreach 1\association complete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[titre_court]"
                           lineageId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].Columns[titre_court]" />
-                        <inputColumn
-                          refId="Package\Conteneur de boucles Foreach 1\association complete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[objet]"
-                          cachedDataType="nText"
-                          cachedName="objet"
-                          externalMetadataColumnId="Package\Conteneur de boucles Foreach 1\association complete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[objet]"
-                          lineageId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].Columns[objet]" />
                         <inputColumn
                           refId="Package\Conteneur de boucles Foreach 1\association complete\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[objet_social1]"
                           cachedDataType="r8"
@@ -7488,10 +7455,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           dataType="wstr"
                           length="255"
                           name="date_maj" />
-                        <externalMetadataColumn
-                          refId="Package\Conteneur de boucles Foreach 1\association complete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[objet]"
-                          dataType="nText"
-                          name="objet" />
                         <externalMetadataColumn
                           refId="Package\Conteneur de boucles Foreach 1\association complete\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[objet_social1]"
                           dataType="r8"
@@ -7800,15 +7763,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           length="255"
                           lineageId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].Columns[titre_court]"
                           name="titre_court"
-                          truncationRowDisposition="FailComponent" />
-                        <outputColumn
-                          refId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].Columns[objet]"
-                          dataType="nText"
-                          errorOrTruncationOperation="Conversion"
-                          errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].ExternalColumns[objet]"
-                          lineageId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].Columns[objet]"
-                          name="objet"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie de source Excel].Columns[objet_social1]"
@@ -8264,11 +8218,6 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
                           length="255"
                           lineageId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[titre_court]"
                           name="titre_court" />
-                        <outputColumn
-                          refId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[objet]"
-                          dataType="nText"
-                          lineageId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[objet]"
-                          name="objet" />
                         <outputColumn
                           refId="Package\Conteneur de boucles Foreach 1\association complete\Source Excel.Outputs[Sortie d'erreur de source Excel].Columns[objet_social1]"
                           dataType="r8"
@@ -8967,6 +8916,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Greffe"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
       DTS:DTSID="{CA4E3063-FAF2-42D4-B0DB-36EF8E7BD55B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -9439,6 +9389,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Population"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
       DTS:DTSID="{8EC1C545-D552-4534-841A-46FD0A7526E7}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -9867,6 +9818,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Subventions"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
       DTS:DTSID="{B63C5C24-6644-4A22-80D5-D122A00EDF34}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -10698,6 +10650,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       DTS:refId="Package\Tâche d'exécution de requêtes SQL"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Tâche d'exécution de requêtes SQL"
+      DTS:Disabled="True"
       DTS:DTSID="{FBFD9324-F039-4BCE-9DED-FA365A9C91EF}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -10708,7 +10661,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{E0D2F552-256B-42F5-BBC6-99F9C1162BD0}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[Staging_Association_Complete];&#xA;TRUNCATE TABLE [dbo].[Sa_Population];&#xA;TRUNCATE TABLE [dbo].[Subventions];&#xA;TRUNCATE TABLE [dbo].[websites];&#xA;TRUNCATE TABLE [dbo].[Management_departement];&#xA;TRUNCATE TABLE [dbo].[Leaders];&#xA;TRUNCATE TABLE [dbo].[Greffe];&#xA;TRUNCATE TABLE [dbo].[dates];&#xA;TRUNCATE TABLE [dbo].[communes];&#xA;TRUNCATE TABLE [dbo].[Associations_identity];&#xA;TRUNCATE TABLE [dbo].[Adresses];&#xA;TRUNCATE TABLE [dbo].[Activity_parent];&#xA;TRUNCATE TABLE [dbo].[Activity];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[Staging_Association_Complete];&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -11181,10 +11134,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
           PanelSize="392,159"
           Size="392,202"
           Id="Package\Conteneur de boucles Foreach 1"
-          TopLeft="465.944444444445,436.111111111111" />
+          TopLeft="467.611111111112,436.111111111111" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 2]"
-          TopLeft="659.013888888889,405.833333333333">
+          TopLeft="659.847222222223,405.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -11206,7 +11159,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 6]"
-          TopLeft="660.472222222223,638.111111111111">
+          TopLeft="661.305555555556,638.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -12231,25 +12184,25 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         <NodeLayout
           Size="177,42"
           Id="Package\Conteneur de boucles Foreach 1\association complete\Destination OLE DB"
-          TopLeft="342.307692307692,241.538461538461" />
+          TopLeft="348.461538461538,255.384615384615" />
         <NodeLayout
           Size="195,42"
           Id="Package\Conteneur de boucles Foreach 1\association complete\Conversion de données"
-          TopLeft="330,169.230769230769" />
+          TopLeft="336.923076923077,168.461538461538" />
         <EdgeLayout
           Id="Package\Conteneur de boucles Foreach 1\association complete.Paths[Sortie de source Excel]"
-          TopLeft="427.826923076923,128.923076923077">
+          TopLeft="431.288461538462,128.923076923077">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,40.3076923076923"
+              EndConnector="0,39.5384615384615"
               Start="0,0"
-              End="0,32.8076923076923">
+              End="0,32.0384615384615">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.8076923076923" />
+                    End="0,32.0384615384615" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12260,18 +12213,18 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Conteneur de boucles Foreach 1\association complete.Paths[Sortie de conversion de données]"
-          TopLeft="429.153846153846,211.230769230769">
+          TopLeft="435.692307692308,210.461538461538">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.3076923076922"
+              EndConnector="0,44.9230769230768"
               Start="0,0"
-              End="0,22.8076923076922">
+              End="0,37.4230769230768">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.8076923076922" />
+                    End="0,37.4230769230768" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
