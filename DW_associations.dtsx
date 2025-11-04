@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="262"
-  DTS:VersionGUID="{67516907-F7F5-4439-9512-4567BA8CC8D1}">
+  DTS:VersionBuild="280"
+  DTS:VersionGUID="{96570C7E-8E70-4A9C-A722-88430E30CC80}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -8537,6 +8537,7 @@ where [refTable].[dep_code] = ?</property>
       DTS:refId="Package\Load Fact Management"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tâche de flux de données"
+      DTS:Disabled="True"
       DTS:DTSID="{0D3CCF66-ED8F-4098-944E-3C8508B25C85}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -14655,7 +14656,7 @@ where [refTable].[fk_year] = ? and [refTable].[fk_grant] = ?</property>
                       refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[Date_PK]"
                       cachedDataType="i4"
                       cachedName="Date_PK"
-                      externalMetadataColumnId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[year]"
+                      externalMetadataColumnId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_date]"
                       lineageId="Package\Load Fact_socio_demographics\recherche fk date.Outputs[Sortie de recherche avec correspondance].Columns[Date_PK]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -14666,35 +14667,20 @@ where [refTable].[fk_year] = ? and [refTable].[fk_grant] = ?</property>
                       name="pk_socio_dem" />
                     <externalMetadataColumn
                       refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[FK_commune]"
-                      dataType="wstr"
-                      length="10"
+                      dataType="i4"
                       name="FK_commune" />
                     <externalMetadataColumn
                       refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[population]"
-                      dataType="i4"
+                      dataType="r8"
                       name="population" />
                     <externalMetadataColumn
                       refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[density]"
                       dataType="r8"
                       name="density" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[equipment_services_level]"
-                      dataType="wstr"
-                      length="100"
-                      name="equipment_services_level" />
-                    <externalMetadataColumn
-                      refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[description_services]"
-                      dataType="wstr"
-                      length="255"
-                      name="description_services" />
-                    <externalMetadataColumn
-                      refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[density_grid]"
+                      refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_date]"
                       dataType="i4"
-                      name="density_grid" />
-                    <externalMetadataColumn
-                      refId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[year]"
-                      dataType="i4"
-                      name="year" />
+                      name="fk_date" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -15059,7 +15045,7 @@ where [refTable].[commune_insee_code] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Fact_socio_demographics]) [refTable]
-where [refTable].[year] = ? and [refTable].[FK_commune] = ?</property>
+where [refTable].[fk_date] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
@@ -15090,12 +15076,12 @@ where [refTable].[year] = ? and [refTable].[FK_commune] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indique si les métadonnées sont à référencer en format XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="pk_socio_dem" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FK_commune" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="population" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="density" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="equipment_services_level" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="description_services" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="density_grid" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="pk_socio_dem" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FK_commune" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="fk_date" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="population" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="density" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
                   description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
-                  name="ParameterMap">#{Package\Load Fact_socio_demographics\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[stat_year]};#{Package\Load Fact_socio_demographics\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_insee]};</property>
+                  name="ParameterMap">#{Package\Load Fact_socio_demographics\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[stat_year]};</property>
                 <property
                   dataType="System.Int32"
                   description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
@@ -15119,23 +15105,6 @@ where [refTable].[year] = ? and [refTable].[FK_commune] = ?</property>
                   name="Entrée de recherche">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Fact_socio_demographics\rechereche fact.Inputs[Entrée de recherche].Columns[code_insee]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="code_insee"
-                      lineageId="Package\Load Fact_socio_demographics\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_insee]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">FK_commune</property>
-                        <property
-                          dataType="System.Null"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Load Fact_socio_demographics\rechereche fact.Inputs[Entrée de recherche].Columns[stat_year]"
                       cachedDataType="i4"
                       cachedName="stat_year"
@@ -15144,7 +15113,7 @@ where [refTable].[year] = ? and [refTable].[FK_commune] = ?</property>
                         <property
                           dataType="System.String"
                           description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">year</property>
+                          name="JoinToReferenceColumn">fk_date</property>
                         <property
                           dataType="System.Null"
                           description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
@@ -15179,9 +15148,8 @@ where [refTable].[year] = ? and [refTable].[FK_commune] = ?</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[FK_commune]"
-                      dataType="wstr"
+                      dataType="i4"
                       errorOrTruncationOperation="Copie de colonnes"
-                      length="10"
                       lineageId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[FK_commune]"
                       name="FK_commune"
                       truncationRowDisposition="FailComponent">
@@ -15194,7 +15162,7 @@ where [refTable].[year] = ? and [refTable].[FK_commune] = ?</property>
                     </outputColumn>
                     <outputColumn
                       refId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[population]"
-                      dataType="i4"
+                      dataType="r8"
                       errorOrTruncationOperation="Copie de colonnes"
                       lineageId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[population]"
                       name="population"
@@ -15218,64 +15186,6 @@ where [refTable].[year] = ? and [refTable].[FK_commune] = ?</property>
                           dataType="System.String"
                           description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
                           name="CopyFromReferenceColumn">density</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[equipment_services_level]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      length="100"
-                      lineageId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[equipment_services_level]"
-                      name="equipment_services_level"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">equipment_services_level</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[description_services]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      length="255"
-                      lineageId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[description_services]"
-                      name="description_services"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">description_services</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[density_grid]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      lineageId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[density_grid]"
-                      name="density_grid"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">density_grid</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[year]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      lineageId="Package\Load Fact_socio_demographics\rechereche fact.Outputs[Sortie de recherche avec correspondance].Columns[year]"
-                      name="year"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">year</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -15498,14 +15408,14 @@ where [refTable].[year] = ? and [refTable].[FK_commune] = ?</property>
           <paths>
             <path
               refId="Package\Load Fact_socio_demographics.Paths[Sortie de recherche avec correspondance]"
-              endId="Package\Load Fact_socio_demographics\recherche fk date.Inputs[Entrée de recherche]"
-              name="Sortie de recherche avec correspondance"
-              startId="Package\Load Fact_socio_demographics\recherche fk_commune.Outputs[Sortie de recherche avec correspondance]" />
-            <path
-              refId="Package\Load Fact_socio_demographics.Paths[Sortie de recherche avec correspondance1]"
               endId="Package\Load Fact_socio_demographics\rechereche fact.Inputs[Entrée de recherche]"
               name="Sortie de recherche avec correspondance"
               startId="Package\Load Fact_socio_demographics\recherche fk date.Outputs[Sortie de recherche avec correspondance]" />
+            <path
+              refId="Package\Load Fact_socio_demographics.Paths[Sortie de recherche avec correspondance1]"
+              endId="Package\Load Fact_socio_demographics\recherche fk date.Inputs[Entrée de recherche]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\Load Fact_socio_demographics\recherche fk_commune.Outputs[Sortie de recherche avec correspondance]" />
             <path
               refId="Package\Load Fact_socio_demographics.Paths[Sortie de recherche sans correspondance]"
               endId="Package\Load Fact_socio_demographics\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
@@ -20513,6 +20423,256 @@ where [refTable].[code] = ?</property>
           version="1">
           <components>
             <component
+              refId="Package\load population\Colonne dérivée"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Colonne dérivée;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;0"
+              description="Crée de nouvelles valeurs de colonne en appliquant des expressions aux colonnes d'entrée de transformation. Créez de nouvelles colonnes ou remplacez celles qui existent déjà. Par exemple, concaténez les valeurs de la colonne 'prénom' et de la colonne 'nom' pour créer une colonne 'nom complet'."
+              name="Colonne dérivée"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\load population\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
+                  description="Entrée de la transformation de colonnes dérivées"
+                  name="Entrée de colonne dérivée">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load population\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[population_per_year]"
+                      cachedDataType="r8"
+                      cachedName="population_per_year"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[population_per_year]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[REPLACENULL](#{Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[population_per_year]},0)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(population_per_year,0)</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\load population\Colonne dérivée.Inputs[Entrée de colonne dérivée].Columns[density_per_year]"
+                      cachedDataType="r8"
+                      cachedName="density_per_year"
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[density_per_year]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[REPLACENULL](#{Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[density_per_year]},0)</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL(density_per_year,0)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load population\Colonne dérivée.Outputs[Sortie de colonne dérivée]"
+                  description="Sortie par défaut de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  name="Sortie de colonne dérivée"
+                  synchronousInputId="Package\load population\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load population\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée]"
+                  description="Sortie d'erreur de la transformation de colonnes dérivées"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de colonne dérivée"
+                  synchronousInputId="Package\load population\Colonne dérivée.Inputs[Entrée de colonne dérivée]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load population\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load population\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load population\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load population\Colonne dérivée.Outputs[Sortie d'erreur de colonne dérivée].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\load population\Commande OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Commande OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;2"
+              description="Exécute une instruction SQL pour chaque ligne d'un flux de données. Par exemple, appelez une procédure stockée 'nouvelle configuration d'employé' pour chaque ligne de la table 'nouveaux employés'. Remarque : l'exécution d'une instruction SQL pour chaque ligne d'un flux de données volumineux peut prendre beaucoup de temps."
+              name="Commande OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Nombre de secondes avant l'expiration d'une commande.  Une valeur égale à 0 indique un délai d'expiration infini."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Commande SQL à exécuter."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[Dim_Population]
+   SET [Density_per_year] = ?
+      ,[Population_per_year] = ?
+      ,[stat_year] = ?
+      
+ WHERE [code_insee] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\load population\Commande OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
+                  description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+                  errorOrTruncationOperation="Exécution de commande"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrée de commande OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[density_per_year]"
+                      cachedDataType="r8"
+                      cachedName="density_per_year"
+                      externalMetadataColumnId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[density_per_year]" />
+                    <inputColumn
+                      refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[population_per_year]"
+                      cachedDataType="r8"
+                      cachedName="population_per_year"
+                      externalMetadataColumnId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[population_per_year]" />
+                    <inputColumn
+                      refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[stat_year]"
+                      cachedDataType="i4"
+                      cachedName="stat_year"
+                      externalMetadataColumnId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[stat_year]" />
+                    <inputColumn
+                      refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[code_insee]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="code_insee"
+                      externalMetadataColumnId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB].Columns[code_insee]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
+                      dataType="r8"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      dataType="r8"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="20"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informations de paramètre.  Correspond aux valeurs DBPARAMFLAGSENUM OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\load population\Commande OLE DB.Outputs[Sortie de commande OLE DB]"
+                  exclusionGroup="1"
+                  name="Sortie de commande OLE DB"
+                  synchronousInputId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\load population\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Sortie d'erreur de commande OLE DB"
+                  synchronousInputId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\load population\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\load population\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\load population\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\load population\Commande OLE DB.Outputs[Sortie d'erreur de commande OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\load population\Destination OLE DB"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
@@ -20626,7 +20786,7 @@ where [refTable].[code] = ?</property>
                       name="Population_per_year" />
                     <externalMetadataColumn
                       refId="Package\load population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[stat_year]"
-                      dataType="r8"
+                      dataType="i4"
                       name="stat_year" />
                     <externalMetadataColumn
                       refId="Package\load population\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[code_insee]"
@@ -20713,7 +20873,7 @@ where [refTable].[code_insee] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indique si les métadonnées sont à référencer en format XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Pk_population" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Density_per_year" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Population_per_year" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="stat_year" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_insee" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Pk_population" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Density_per_year" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Population_per_year" dataType="DT_R8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="stat_year" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_insee" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -20782,63 +20942,6 @@ where [refTable].[code_insee] = ?</property>
                           dataType="System.String"
                           description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
                           name="CopyFromReferenceColumn">Pk_population</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Density_per_year]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      lineageId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Density_per_year]"
-                      name="Density_per_year"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">Density_per_year</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Population_per_year]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      lineageId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[Population_per_year]"
-                      name="Population_per_year"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">Population_per_year</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[stat_year]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      lineageId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[stat_year]"
-                      name="stat_year"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">stat_year</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_insee]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Copie de colonnes"
-                      length="20"
-                      lineageId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_insee]"
-                      name="code_insee"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn">code_insee</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -21042,13 +21145,23 @@ where [refTable].[code_insee] = ?</property>
           </components>
           <paths>
             <path
+              refId="Package\load population.Paths[Sortie de colonne dérivée]"
+              endId="Package\load population\Recherche.Inputs[Entrée de recherche]"
+              name="Sortie de colonne dérivée"
+              startId="Package\load population\Colonne dérivée.Outputs[Sortie de colonne dérivée]" />
+            <path
+              refId="Package\load population.Paths[Sortie de recherche avec correspondance]"
+              endId="Package\load population\Commande OLE DB.Inputs[Entrée de commande OLE DB]"
+              name="Sortie de recherche avec correspondance"
+              startId="Package\load population\Recherche.Outputs[Sortie de recherche avec correspondance]" />
+            <path
               refId="Package\load population.Paths[Sortie de recherche sans correspondance]"
               endId="Package\load population\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
               name="Sortie de recherche sans correspondance"
               startId="Package\load population\Recherche.Outputs[Sortie de recherche sans correspondance]" />
             <path
               refId="Package\load population.Paths[Sortie de source OLE DB]"
-              endId="Package\load population\Recherche.Inputs[Entrée de recherche]"
+              endId="Package\load population\Colonne dérivée.Inputs[Entrée de colonne dérivée]"
               name="Sortie de source OLE DB"
               startId="Package\load population\Source OLE DB.Outputs[Sortie de source OLE DB]" />
           </paths>
@@ -24286,27 +24399,27 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="207,42"
           Id="Package\Load academie dimension"
-          TopLeft="631.5,721" />
+          TopLeft="357.214285714286,705.285714285714" />
         <NodeLayout
           Size="195,42"
           Id="Package\Load Activity dimension"
-          TopLeft="365.75,289.25" />
+          TopLeft="320.035714285714,290.678571428571" />
         <NodeLayout
           Size="193,42"
           Id="Package\Load adress dimension"
-          TopLeft="632.027777777778,424" />
+          TopLeft="703.456349206349,446.857142857143" />
         <NodeLayout
           Size="208,42"
           Id="Package\Load commune dimension"
-          TopLeft="630,580" />
+          TopLeft="357.142857142857,565.714285714286" />
         <NodeLayout
           Size="215,42"
           Id="Package\Load department dimension"
-          TopLeft="627.5,648" />
+          TopLeft="353.214285714286,635.142857142857" />
         <NodeLayout
           Size="195,42"
           Id="Package\Load Fact Management"
-          TopLeft="1152,457" />
+          TopLeft="1026.28571428571,569.857142857143" />
         <NodeLayout
           Size="190,42"
           Id="Package\Load Fact_Association"
@@ -24318,7 +24431,7 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="235,42"
           Id="Package\Load Fact_socio_demographics"
-          TopLeft="877.25,491.5" />
+          TopLeft="687.25,568.642857142857" />
         <NodeLayout
           Size="185,42"
           Id="Package\Load grant dimension"
@@ -24326,19 +24439,23 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="190,42"
           Id="Package\Load Greffe dimension"
-          TopLeft="1155.97222222222,793.555555555556" />
+          TopLeft="1034.54365079365,782.126984126985" />
         <NodeLayout
           Size="195,42"
           Id="Package\Load identity dimension"
-          TopLeft="827.25,280" />
+          TopLeft="880.107142857143,280" />
         <NodeLayout
-          Size="260,42"
+          Size="321,42"
           Id="Package\Load managment_department dimension"
-          TopLeft="343.5,421.25" />
+          TopLeft="312.071428571428,454.107142857143" />
         <NodeLayout
-          Size="190,42"
+          Size="154,42"
+          Id="Package\load population"
+          TopLeft="725.952380952381,697.678571428571" />
+        <NodeLayout
+          Size="203,42"
           Id="Package\Load region dimension"
-          TopLeft="645.5,799" />
+          TopLeft="362.642857142857,781.857142857143" />
         <NodeLayout
           Size="209,42"
           Id="Package\Load social_obj dimension"
@@ -24375,30 +24492,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 1]"
-          TopLeft="421.5,259">
+          TopLeft="419.517857142857,259">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="41.75,30.25"
+              EndConnector="0,31.6785714285714"
               Start="0,0"
-              End="41.75,22.75">
+              End="0,24.1785714285714">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.125"
-                    Point2="0,15.125"
-                    Point3="4,15.125" />
-                  <mssgle:LineSegment
-                    End="37.75,15.125" />
-                  <mssgle:CubicBezierSegment
-                    Point1="37.75,15.125"
-                    Point2="41.75,15.125"
-                    Point3="41.75,19.125" />
-                  <mssgle:LineSegment
-                    End="41.75,22.75" />
+                    End="0,24.1785714285714" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24430,19 +24535,63 @@ where [refTable].[code_website] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Contrainte 12]"
-          TopLeft="734.5,648">
+          Id="Package.PrecedenceConstraints[Contrainte 11]"
+          TopLeft="565.642857142857,802.992063492064">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-26"
+              EndConnector="468.90079365079,0"
               Start="0,0"
-              End="0,-18.5">
+              End="461.40079365079,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-18.5" />
+                    End="461.40079365079,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 12]"
+          TopLeft="460.928571428572,635.142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-27.4285714285712"
+              Start="0,0"
+              End="0,-19.9285714285712">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-19.9285714285712" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 13]"
+          TopLeft="565.142857142857,588.178571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="122.107142857143,0"
+              Start="0,0"
+              End="114.607142857143,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="114.607142857143,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24453,18 +24602,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 14]"
-          TopLeft="1250.23611111111,793.555555555556">
+          TopLeft="1126.66468253968,782.126984126985">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-294.555555555556"
+              EndConnector="0,-170.269841269842"
               Start="0,0"
-              End="0,-287.055555555556">
+              End="0,-162.769841269842">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-287.055555555556" />
+                    End="0,-162.769841269842" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24475,30 +24624,30 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 15]"
-          TopLeft="924.75,322">
+          TopLeft="977.607142857143,322">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="324.75,135"
+              EndConnector="146.178571428571,247.857142857143"
               Start="0,0"
-              End="324.75,127.5">
+              End="146.178571428571,240.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,63.5" />
+                    End="0,119.928571428571" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,63.5"
-                    Point2="0,67.5"
-                    Point3="4,67.5" />
+                    Point1="0,119.928571428571"
+                    Point2="0,123.928571428571"
+                    Point3="4,123.928571428571" />
                   <mssgle:LineSegment
-                    End="320.75,67.5" />
+                    End="142.178571428571,123.928571428571" />
                   <mssgle:CubicBezierSegment
-                    Point1="320.75,67.5"
-                    Point2="324.75,67.5"
-                    Point3="324.75,71.5" />
+                    Point1="142.178571428571,123.928571428571"
+                    Point2="146.178571428571,123.928571428571"
+                    Point3="146.178571428571,127.928571428571" />
                   <mssgle:LineSegment
-                    End="324.75,127.5" />
+                    End="146.178571428571,240.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24509,30 +24658,40 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 16]"
-          TopLeft="759.361111111111,466">
+          TopLeft="802.353174603175,488.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="235.388888888889,25.5"
+              EndConnector="0,79.7857142857142"
               Start="0,0"
-              End="235.388888888889,18">
+              End="0,72.2857142857142">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,6.32579650565262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,6.32579650565262"
-                    Point2="0,10.3257965056526"
-                    Point3="4,10.3257965056526" />
+                    End="0,72.2857142857142" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Contrainte 17]"
+          TopLeft="803.851190476191,697.678571428571">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,-87.0357142857141"
+              Start="0,0"
+              End="0,-79.5357142857141">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="231.388888888889,10.3257965056526" />
-                  <mssgle:CubicBezierSegment
-                    Point1="231.388888888889,10.3257965056526"
-                    Point2="235.388888888889,10.3257965056526"
-                    Point3="235.388888888889,14.3257965056526" />
-                  <mssgle:LineSegment
-                    End="235.388888888889,18" />
+                    End="0,-79.5357142857141" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24543,18 +24702,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 2]"
-          TopLeft="737.75,799">
+          TopLeft="462.428571428572,781.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-36"
+              EndConnector="0,-34.5714285714286"
               Start="0,0"
-              End="0,-28.5">
+              End="0,-27.0714285714286">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-28.5" />
+                    End="0,-27.0714285714286" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24565,18 +24724,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 3]"
-          TopLeft="735,721">
+          TopLeft="460.714285714286,705.285714285714">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-31"
+              EndConnector="0,-28.1428571428573"
               Start="0,0"
-              End="0,-23.5">
+              End="0,-20.6428571428573">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-23.5" />
+                    End="0,-20.6428571428573" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24609,18 +24768,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 5]"
-          TopLeft="560.75,308.125">
+          TopLeft="515.035714285714,308.839285714286">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38.6944444444443,0"
+              EndConnector="84.4087301587298,0"
               Start="0,0"
-              End="31.1944444444443,0">
+              End="76.9087301587298,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="31.1944444444443,0" />
+                    End="76.9087301587298,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24631,30 +24790,30 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 6]"
-          TopLeft="473.5,421.25">
+          TopLeft="472.571428571428,454.107142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="190.611111111111,-94.25"
+              EndConnector="191.539682539682,-127.107142857143"
               Start="0,0"
-              End="190.611111111111,-86.75">
+              End="191.539682539682,-119.607142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-52.0777661795407" />
+                    End="0,-71.6274232031017" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-52.0777661795407"
-                    Point2="0,-56.0777661795407"
-                    Point3="4,-56.0777661795407" />
+                    Point1="0,-71.6274232031017"
+                    Point2="0,-75.6274232031017"
+                    Point3="4,-75.6274232031017" />
                   <mssgle:LineSegment
-                    End="186.611111111111,-56.0777661795407" />
+                    End="187.539682539682,-75.6274232031017" />
                   <mssgle:CubicBezierSegment
-                    Point1="186.611111111111,-56.0777661795407"
-                    Point2="190.611111111111,-56.0777661795407"
-                    Point3="190.611111111111,-60.0777661795407" />
+                    Point1="187.539682539682,-75.6274232031017"
+                    Point2="191.539682539682,-75.6274232031017"
+                    Point3="191.539682539682,-79.6274232031017" />
                   <mssgle:LineSegment
-                    End="190.611111111111,-86.75" />
+                    End="191.539682539682,-119.607142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24665,18 +24824,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 7]"
-          TopLeft="827.25,303.5">
+          TopLeft="880.107142857143,303.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-37.8055555555557,0"
+              EndConnector="-90.6626984126989,0"
               Start="0,0"
-              End="-30.3055555555557,0">
+              End="-83.1626984126989,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-30.3055555555557,0" />
+                    End="-83.1626984126989,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24687,18 +24846,30 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 8]"
-          TopLeft="726.652777777778,424">
+          TopLeft="799.956349206349,446.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,-97"
+              EndConnector="-75.178571428572,-119.857142857143"
               Start="0,0"
-              End="0,-89.5">
+              End="-75.178571428572,-112.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-89.5" />
+                    End="0,-67.3137488815986" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-67.3137488815986"
+                    Point2="0,-71.3137488815986"
+                    Point3="-4,-71.3137488815986" />
+                  <mssgle:LineSegment
+                    End="-71.178571428572,-71.3137488815986" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-71.178571428572,-71.3137488815986"
+                    Point2="-75.178571428572,-71.3137488815986"
+                    Point3="-75.178571428572,-75.3137488815986" />
+                  <mssgle:LineSegment
+                    End="-75.178571428572,-112.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24709,112 +24880,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 9]"
-          TopLeft="1022.25,300.416666666667">
+          TopLeft="1075.10714285714,300.416666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="110.694444444445,0"
+              EndConnector="57.8373015872971,0"
               Start="0,0"
-              End="103.194444444445,0">
+              End="50.3373015872971,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="103.194444444445,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Contrainte 13]"
-          TopLeft="734,580">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="260.75,-46.5"
-              Start="0,0"
-              End="260.75,-39">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-19.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-19.25"
-                    Point2="0,-23.25"
-                    Point3="4,-23.25" />
-                  <mssgle:LineSegment
-                    End="256.75,-23.25" />
-                  <mssgle:CubicBezierSegment
-                    Point1="256.75,-23.25"
-                    Point2="260.75,-23.25"
-                    Point3="260.75,-27.25" />
-                  <mssgle:LineSegment
-                    End="260.75,-39" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\load population"
-          TopLeft="980,631.25" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Contrainte 17]"
-          TopLeft="1057,631.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-24.4166666666667,-97.75"
-              Start="0,0"
-              End="-24.4166666666667,-90.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-54.2533812341504" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-54.2533812341504"
-                    Point2="0,-58.2533812341504"
-                    Point3="-4,-58.2533812341504" />
-                  <mssgle:LineSegment
-                    End="-20.4166666666667,-58.2533812341504" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20.4166666666667,-58.2533812341504"
-                    Point2="-24.4166666666667,-58.2533812341504"
-                    Point3="-24.4166666666667,-62.2533812341504" />
-                  <mssgle:LineSegment
-                    End="-24.4166666666667,-90.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Contrainte 11]"
-          TopLeft="835.5,817.277777777778">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="320.472222222221,0"
-              Start="0,0"
-              End="312.972222222221,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="312.972222222221,0" />
+                    End="50.3373015872971,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24898,7 +24975,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24932,7 +25011,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24954,7 +25035,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24976,7 +25059,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24998,7 +25083,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25104,7 +25191,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -25224,9 +25313,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25344,9 +25431,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25368,9 +25453,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -25658,9 +25741,13 @@ where [refTable].[code_website] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="145,42"
-          Id="Package\Load commune dimension\sa_commune"
-          TopLeft="81.5,102.5" />
+          Size="166,42"
+          Id="Package\Load commune dimension\Jointure de fusion"
+          TopLeft="266,336" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Load commune dimension\Destination OLE DB"
+          TopLeft="264.571428571429,666.714285714286" />
         <NodeLayout
           Size="161,42"
           Id="Package\Load commune dimension\dw_departement"
@@ -25668,97 +25755,41 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="102,42"
           Id="Package\Load commune dimension\Trier"
-          TopLeft="149,224" />
+          TopLeft="149,216" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Load commune dimension\sa_commune"
+          TopLeft="127.5,128.5" />
         <NodeLayout
           Size="111,42"
           Id="Package\Load commune dimension\Trier 1"
-          TopLeft="440.5,244.5" />
-        <EdgeLayout
-          Id="Package\Load commune dimension.Paths[Sortie de source OLE DB]"
-          TopLeft="154,144.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="46,79.5"
-              Start="0,0"
-              End="46,72">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.75"
-                    Point2="0,39.75"
-                    Point3="4,39.75" />
-                  <mssgle:LineSegment
-                    End="42,39.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="42,39.75"
-                    Point2="46,39.75"
-                    Point3="46,43.75" />
-                  <mssgle:LineSegment
-                    End="46,72" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load commune dimension.Paths[Sortie de source OLE DB1]"
-          TopLeft="497,157.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,87"
-              Start="0,0"
-              End="0,79.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,79.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="437.5,222.5" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\Load commune dimension\Jointure de fusion"
-          TopLeft="300,374" />
+          Size="111,42"
+          Id="Package\Load commune dimension\Trier 2"
+          TopLeft="298.928571428571,419.5" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load commune dimension\Colonne dérivée"
+          TopLeft="272.666666666667,501.111111111111" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Load commune dimension\Recherche"
+          TopLeft="289.571428571429,571.571428571429" />
         <EdgeLayout
-          Id="Package\Load commune dimension.Paths[Sortie de tri]"
-          TopLeft="200,266">
+          Id="Package\Load commune dimension.Paths[Sortie de tri2]"
+          TopLeft="353.297619047619,461.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="183,108"
+              EndConnector="0,39.611111111111"
               Start="0,0"
-              End="183,100.5">
+              End="0,32.111111111111">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,50"
-                    Point2="0,54"
-                    Point3="4,54" />
-                  <mssgle:LineSegment
-                    End="179,54" />
-                  <mssgle:CubicBezierSegment
-                    Point1="179,54"
-                    Point2="183,54"
-                    Point3="183,58" />
-                  <mssgle:LineSegment
-                    End="183,100.5" />
+                    End="0,32.111111111111" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25769,30 +25800,30 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load commune dimension.Paths[Sortie de tri1]"
-          TopLeft="496,286.5">
+          TopLeft="493,264.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-86.6666666666667,87.5"
+              EndConnector="-117.666666666667,71.5"
               Start="0,0"
-              End="-86.6666666666667,80">
+              End="-117.666666666667,64">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.9988066825776" />
+                    End="0,38.4904534606205" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.9988066825776"
-                    Point2="0,51.9988066825776"
-                    Point3="-4,51.9988066825776" />
+                    Point1="0,38.4904534606205"
+                    Point2="0,42.4904534606205"
+                    Point3="-4,42.4904534606205" />
                   <mssgle:LineSegment
-                    End="-82.6666666666667,51.9988066825776" />
+                    End="-113.666666666667,42.4904534606205" />
                   <mssgle:CubicBezierSegment
-                    Point1="-82.6666666666667,51.9988066825776"
-                    Point2="-86.6666666666667,51.9988066825776"
-                    Point3="-86.6666666666667,55.9988066825776" />
+                    Point1="-113.666666666667,42.4904534606205"
+                    Point2="-117.666666666667,42.4904534606205"
+                    Point3="-117.666666666667,46.4904534606205" />
                   <mssgle:LineSegment
-                    End="-86.6666666666667,80" />
+                    End="-117.666666666667,64" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25801,24 +25832,32 @@ where [refTable].[code_website] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="111,42"
-          Id="Package\Load commune dimension\Trier 2"
-          TopLeft="331.928571428571,486.5" />
         <EdgeLayout
-          Id="Package\Load commune dimension.Paths[Sortie de jointure de fusion]"
-          TopLeft="385.214285714286,416">
+          Id="Package\Load commune dimension.Paths[Sortie de tri]"
+          TopLeft="200,258">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,70.4999999999999"
+              EndConnector="122.666666666667,78"
               Start="0,0"
-              End="0,62.9999999999999">
+              End="122.666666666667,70.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.9999999999999" />
+                    End="0,42.3532219570406" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.3532219570406"
+                    Point2="0,46.3532219570406"
+                    Point3="4,46.3532219570406" />
+                  <mssgle:LineSegment
+                    End="118.666666666667,46.3532219570406" />
+                  <mssgle:CubicBezierSegment
+                    Point1="118.666666666667,46.3532219570406"
+                    Point2="122.666666666667,46.3532219570406"
+                    Point3="122.666666666667,50.3532219570406" />
+                  <mssgle:LineSegment
+                    End="122.666666666667,70.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25827,80 +25866,88 @@ where [refTable].[code_website] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Load commune dimension\Recherche"
-          TopLeft="328.571428571429,618.571428571429" />
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Load commune dimension\Destination OLE DB"
-          TopLeft="88.5714285714286,645.714285714286" />
+        <EdgeLayout
+          Id="Package\Load commune dimension.Paths[Sortie de source OLE DB1]"
+          TopLeft="495.5,157.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load commune dimension.Paths[Sortie de source OLE DB]"
+          TopLeft="200,170.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5"
+              Start="0,0"
+              End="0,38">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load commune dimension.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="328.571428571429,639.571428571429">
+          TopLeft="354.321428571429,613.571428571429">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-63,27.1428571428571"
+              EndConnector="0,53.142857142857"
               Start="0,0"
-              End="-55.5,27.1428571428571">
+              End="0,45.642857142857">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-27.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-27.5,0"
-                    Point2="-31.5,0"
-                    Point3="-31.5,4" />
-                  <mssgle:LineSegment
-                    End="-31.5,23.1428571428571" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-31.5,23.1428571428571"
-                    Point2="-31.5,27.1428571428571"
-                    Point3="-35.5,27.1428571428571" />
-                  <mssgle:LineSegment
-                    End="-55.5,27.1428571428571" />
+                    End="0,45.642857142857" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-123.00201171875,-17.609375,183.0040234375,11.609375"
+              BoundingBox="-91.50201171875,17.0167410714285,183.0040234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Load commune dimension\Colonne dérivée"
-          TopLeft="176.666666666667,551.111111111111" />
         <EdgeLayout
-          Id="Package\Load commune dimension.Paths[Sortie de tri2]"
-          TopLeft="387.428571428571,528.5">
+          Id="Package\Load commune dimension.Paths[Sortie de jointure de fusion]"
+          TopLeft="351.714285714285,378">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-131.261904761905,22.6111111111111"
+              EndConnector="0,41.5"
               Start="0,0"
-              End="-131.261904761905,15.1111111111111">
+              End="0,34">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,7.30555555555554" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,7.30555555555554"
-                    Point2="0,11.3055555555555"
-                    Point3="-4,11.3055555555555" />
-                  <mssgle:LineSegment
-                    End="-127.261904761905,11.3055555555555" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-127.261904761905,11.3055555555555"
-                    Point2="-131.261904761905,11.3055555555555"
-                    Point3="-131.261904761905,15.3055555555555" />
-                  <mssgle:LineSegment
-                    End="-131.261904761905,15.1111111111111" />
+                    End="0,34" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25911,30 +25958,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load commune dimension.Paths[Sortie de colonne dérivée]"
-          TopLeft="256.166666666667,593.111111111111">
+          TopLeft="353.869047619048,543.111111111111">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138.404761904762,25.4603174603175"
+              EndConnector="0,28.460317460318"
               Start="0,0"
-              End="138.404761904762,17.9603174603175">
+              End="0,20.960317460318">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.73015873015873" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,8.73015873015873"
-                    Point2="0,12.7301587301587"
-                    Point3="4,12.7301587301587" />
-                  <mssgle:LineSegment
-                    End="134.404761904762,12.7301587301587" />
-                  <mssgle:CubicBezierSegment
-                    Point1="134.404761904762,12.7301587301587"
-                    Point2="138.404761904762,12.7301587301587"
-                    Point3="138.404761904762,16.7301587301587" />
-                  <mssgle:LineSegment
-                    End="138.404761904762,17.9603174603175" />
+                    End="0,20.960317460318" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25946,6 +25981,68 @@ where [refTable].[code_website] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load commune dimension\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load commune dimension\dw_departement">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load commune dimension\sa_commune">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load commune dimension\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_communes]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load department dimension">
     <LayoutInfo>
@@ -26296,7 +26393,7 @@ where [refTable].[code_website] = ?</property>
     design-time-name="Package\Load Fact Management">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="166,42"
           Id="Package\Load Fact Management\Source OLE DB 1"
@@ -26336,9 +26433,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26360,9 +26455,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26396,9 +26489,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26432,9 +26523,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -26486,7 +26575,7 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="163,42"
           Id="Package\Load Fact_Association\Fact_Association"
-          TopLeft="235.681818181818,551.818181818182" />
+          TopLeft="190.681818181818,552.818181818182" />
         <NodeLayout
           Size="129,42"
           Id="Package\Load Fact_Association\fk_Activity"
@@ -26510,7 +26599,7 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="132,42"
           Id="Package\Load Fact_Association\Recherche"
-          TopLeft="246.666666666667,447.5" />
+          TopLeft="203.666666666667,445.5" />
         <NodeLayout
           Size="129,42"
           Id="Package\Load Fact_Association\fk_identity"
@@ -26546,56 +26635,54 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="314.924242424242,489.5">
+          TopLeft="270.924242424242,487.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62.3181818181819"
+              EndConnector="0,65.318181818182"
               Start="0,0"
-              End="0,54.8181818181819">
+              End="0,57.818181818182">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.8181818181819" />
+                    End="0,57.818181818182" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-91.50201171875,21.6044034090909,183.0040234375,11.609375"
+              BoundingBox="-91.50201171875,23.104403409091,183.0040234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance9]"
-          TopLeft="423.772727272727,467.333333333333">
+          TopLeft="423.772727272727,466.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-45.1060606060603,0"
+              EndConnector="-88.1060606060601,0"
               Start="0,0"
-              End="-37.6060606060603,0">
+              End="-80.6060606060601,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-37.6060606060603,0" />
+                    End="-80.6060606060601,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-110.48004202178,5,183.3540234375,11.609375"
+              BoundingBox="-131.98004202178,5,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -26858,9 +26945,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -27398,39 +27483,39 @@ where [refTable].[code_website] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="157,42"
-          Id="Package\Load Fact_socio_demographics\Source OLE DB"
-          TopLeft="278,77" />
+          Size="164,42"
+          Id="Package\Load Fact_socio_demographics\recherche fk date"
+          TopLeft="447.636363636364,215.454545454545" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Load Fact_socio_demographics\rechereche fact"
+          TopLeft="445.409090909091,308.227272727273" />
         <NodeLayout
           Size="194,42"
           Id="Package\Load Fact_socio_demographics\recherche fk_commune"
-          TopLeft="571,192" />
+          TopLeft="427.272727272727,137.272727272727" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Load Fact_socio_demographics\Source OLE DB"
+          TopLeft="447.454545454545,57.5454545454545" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Load Fact_socio_demographics\Destination OLE DB"
+          TopLeft="437.015151515152,385.651515151515" />
         <EdgeLayout
           Id="Package\Load Fact_socio_demographics.Paths[Sortie de source OLE DB]"
-          TopLeft="356.5,119">
+          TopLeft="525.113636363636,99.5454545454545">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="311.5,73"
+              EndConnector="0,37.7272727272727"
               Start="0,0"
-              End="311.5,65.5">
+              End="0,30.2272727272727">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.5"
-                    Point2="0,36.5"
-                    Point3="4,36.5" />
-                  <mssgle:LineSegment
-                    End="307.5,36.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="307.5,36.5"
-                    Point2="311.5,36.5"
-                    Point3="311.5,40.5" />
-                  <mssgle:LineSegment
-                    End="311.5,65.5" />
+                    End="0,30.2272727272727" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27439,129 +27524,176 @@ where [refTable].[code_website] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Load Fact_socio_demographics\recherche fk date"
-          TopLeft="396,405" />
-        <EdgeLayout
-          Id="Package\Load Fact_socio_demographics.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="668,234">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-190,171"
-              Start="0,0"
-              End="-190,163.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,81.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,81.5"
-                    Point2="0,85.5"
-                    Point3="-4,85.5" />
-                  <mssgle:LineSegment
-                    End="-186,85.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-186,85.5"
-                    Point2="-190,85.5"
-                    Point3="-190,89.5" />
-                  <mssgle:LineSegment
-                    End="-190,163.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-186.67701171875,90.5,183.3540234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Load Fact_socio_demographics\rechereche fact"
-          TopLeft="194.5,272.5" />
-        <EdgeLayout
-          Id="Package\Load Fact_socio_demographics.Paths[Sortie de recherche avec correspondance1]"
-          TopLeft="452,405">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-180,-90.5"
-              Start="0,0"
-              End="-180,-83">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,-32.7246376811594" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-32.7246376811594"
-                    Point2="0,-36.7246376811594"
-                    Point3="-4,-36.7246376811594" />
-                  <mssgle:LineSegment
-                    End="-176,-36.7246376811594" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-176,-36.7246376811594"
-                    Point2="-180,-36.7246376811594"
-                    Point3="-180,-40.7246376811594" />
-                  <mssgle:LineSegment
-                    End="-180,-83" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-181.67701171875,-31.7246376811594,183.3540234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Load Fact_socio_demographics\Destination OLE DB"
-          TopLeft="35.5,35.5" />
         <EdgeLayout
           Id="Package\Load Fact_socio_demographics.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="272,272.5">
+          TopLeft="524.212121212121,350.227272727273">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-148,-195"
+              EndConnector="0,35.4242424242425"
               Start="0,0"
-              End="-148,-187.5">
+              End="0,27.9242424242425">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-93.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-93.5"
-                    Point2="0,-97.5"
-                    Point3="-4,-97.5" />
-                  <mssgle:LineSegment
-                    End="-144,-97.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-144,-97.5"
-                    Point2="-148,-97.5"
-                    Point3="-148,-101.5" />
-                  <mssgle:LineSegment
-                    End="-148,-187.5" />
+                    End="0,27.9242424242425" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-165.50201171875,-92.5,183.0040234375,11.609375"
+              BoundingBox="-91.50201171875,8.15743371212125,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact_socio_demographics.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="526.272727272727,257.454545454545">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.7727272727272"
+              Start="0,0"
+              End="0,43.2727272727272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2727272727272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,15.8316761363636,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact_socio_demographics.Paths[Sortie de recherche avec correspondance1]"
+          TopLeft="526.954545454545,179.272727272727">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.1818181818182"
+              Start="0,0"
+              End="0,28.6818181818182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6818181818182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,8.53622159090911,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_socio_demographics\rechereche fact">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Fact_socio_demographics]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_socio_demographics\recherche fk date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimDates]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_socio_demographics\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_socio_demographics\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_socio_demographics\recherche fk_commune">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[dim_communes]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load grant dimension">
     <LayoutInfo>
@@ -27829,31 +27961,17 @@ where [refTable].[code_website] = ?</property>
           Id="Package\Load Greffe dimension\Dw_region"
           TopLeft="542,95" />
         <NodeLayout
+          Size="177,42"
+          Id="Package\Load Greffe dimension\Destination OLE DB"
+          TopLeft="398.021978021978,500.879120879121" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Load Greffe dimension\Recherche"
+          TopLeft="430.604395604395,407.857142857143" />
+        <NodeLayout
           Size="111,42"
           Id="Package\Load Greffe dimension\Trier 1"
           TopLeft="355,194" />
-        <EdgeLayout
-          Id="Package\Load Greffe dimension.Paths[Sortie de source OLE DB]"
-          TopLeft="411.5,137">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,57"
-              Start="0,0"
-              End="0,49.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="102,42"
           Id="Package\Load Greffe dimension\Trier"
@@ -27862,6 +27980,44 @@ where [refTable].[code_website] = ?</property>
           Size="166,42"
           Id="Package\Load Greffe dimension\Jointure de fusion"
           TopLeft="420.692307692308,338.538461538462" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Load Greffe dimension\Colonne dérivée"
+          TopLeft="536.923076923077,167.692307692308" />
+        <EdgeLayout
+          Id="Package\Load Greffe dimension.Paths[Sortie de tri1]"
+          TopLeft="653.461538461538,313.461538461538">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-123.435897435897,25.0769230769231"
+              Start="0,0"
+              End="-123.435897435897,17.5769230769231">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.9025151459519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.9025151459519"
+                    Point2="0,14.9025151459519"
+                    Point3="-4,14.9025151459519" />
+                  <mssgle:LineSegment
+                    End="-119.435897435897,14.9025151459519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-119.435897435897,14.9025151459519"
+                    Point2="-123.435897435897,14.9025151459519"
+                    Point3="-123.435897435897,18.9025151459519" />
+                  <mssgle:LineSegment
+                    End="-123.435897435897,17.5769230769231" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Greffe dimension.Paths[Sortie de tri]"
           TopLeft="410.5,236">
@@ -27897,31 +28053,31 @@ where [refTable].[code_website] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Greffe dimension.Paths[Sortie de tri1]"
-          TopLeft="653.461538461538,313.461538461538">
+          Id="Package\Load Greffe dimension.Paths[Sortie de source OLE DB1]"
+          TopLeft="608,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-123.435897435897,25.0769230769231"
+              EndConnector="8.42307692307679,30.6923076923077"
               Start="0,0"
-              End="-123.435897435897,17.5769230769231">
+              End="8.42307692307679,23.1923076923077">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,10.9025151459519" />
+                    End="0,11.3461538461539" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,10.9025151459519"
-                    Point2="0,14.9025151459519"
-                    Point3="-4,14.9025151459519" />
+                    Point1="0,11.3461538461539"
+                    Point2="0,15.3461538461539"
+                    Point3="4,15.3461538461539" />
                   <mssgle:LineSegment
-                    End="-119.435897435897,14.9025151459519" />
+                    End="4.42307692307679,15.3461538461539" />
                   <mssgle:CubicBezierSegment
-                    Point1="-119.435897435897,14.9025151459519"
-                    Point2="-123.435897435897,14.9025151459519"
-                    Point3="-123.435897435897,18.9025151459519" />
+                    Point1="4.42307692307679,15.3461538461539"
+                    Point2="8.42307692307679,15.3461538461539"
+                    Point3="8.42307692307679,19.3461538461539" />
                   <mssgle:LineSegment
-                    End="-123.435897435897,17.5769230769231" />
+                    End="8.42307692307679,23.1923076923077" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27930,24 +28086,20 @@ where [refTable].[code_website] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Load Greffe dimension\Recherche"
-          TopLeft="430.604395604395,407.857142857143" />
         <EdgeLayout
-          Id="Package\Load Greffe dimension.Paths[Sortie de jointure de fusion]"
-          TopLeft="500.148351648352,380.538461538462">
+          Id="Package\Load Greffe dimension.Paths[Sortie de source OLE DB]"
+          TopLeft="411.5,137">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.3186813186813"
+              EndConnector="0,57"
               Start="0,0"
-              End="0,19.8186813186813">
+              End="0,49.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.8186813186813" />
+                    End="0,49.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -27956,10 +28108,6 @@ where [refTable].[code_website] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Load Greffe dimension\Destination OLE DB"
-          TopLeft="398.021978021978,500.879120879121" />
         <EdgeLayout
           Id="Package\Load Greffe dimension.Paths[Sortie de recherche sans correspondance]"
           TopLeft="496.604395604395,449.857142857143">
@@ -27996,36 +28144,20 @@ where [refTable].[code_website] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Load Greffe dimension\Colonne dérivée"
-          TopLeft="536.923076923077,167.692307692308" />
         <EdgeLayout
-          Id="Package\Load Greffe dimension.Paths[Sortie de source OLE DB1]"
-          TopLeft="608,137">
+          Id="Package\Load Greffe dimension.Paths[Sortie de jointure de fusion]"
+          TopLeft="500.148351648352,380.538461538462">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8.42307692307679,30.6923076923077"
+              EndConnector="0,27.3186813186813"
               Start="0,0"
-              End="8.42307692307679,23.1923076923077">
+              End="0,19.8186813186813">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.3461538461539" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,11.3461538461539"
-                    Point2="0,15.3461538461539"
-                    Point3="4,15.3461538461539" />
-                  <mssgle:LineSegment
-                    End="4.42307692307679,15.3461538461539" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.42307692307679,15.3461538461539"
-                    Point2="8.42307692307679,15.3461538461539"
-                    Point3="8.42307692307679,19.3461538461539" />
-                  <mssgle:LineSegment
-                    End="8.42307692307679,23.1923076923077" />
+                    End="0,19.8186813186813" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28071,6 +28203,68 @@ where [refTable].[code_website] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Greffe dimension\Sa_greffe">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Greffe dimension\Dw_region">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Greffe dimension\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Greffe dimension\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_greffe]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load identity dimension">
     <LayoutInfo>
@@ -28308,9 +28502,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28332,9 +28524,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28410,6 +28600,199 @@ where [refTable].[code_website] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\load population">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\load population\Source OLE DB"
+          TopLeft="382,50" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\load population\Destination OLE DB"
+          TopLeft="266.25,324" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\load population\Recherche"
+          TopLeft="392.75,222.25" />
+        <EdgeLayout
+          Id="Package\load population.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="438.083333333333,264.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83.3333333333333,59.75"
+              Start="0,0"
+              End="-83.3333333333333,52.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3293413173653" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3293413173653"
+                    Point2="0,24.3293413173653"
+                    Point3="-4,24.3293413173653" />
+                  <mssgle:LineSegment
+                    End="-79.3333333333333,24.3293413173653" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.3333333333333,24.3293413173653"
+                    Point2="-83.3333333333333,24.3293413173653"
+                    Point3="-83.3333333333333,28.3293413173653" />
+                  <mssgle:LineSegment
+                    End="-83.3333333333333,52.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-133.168678385417,29.3293413173653,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="159,42"
+          Id="Package\load population\Colonne dérivée"
+          TopLeft="376,136" />
+        <EdgeLayout
+          Id="Package\load population.Paths[Sortie de source OLE DB]"
+          TopLeft="458,92">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\load population.Paths[Sortie de colonne dérivée]"
+          TopLeft="457.125,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.25"
+              Start="0,0"
+              End="0,36.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179,42"
+          Id="Package\load population\Commande OLE DB"
+          TopLeft="506,322" />
+        <EdgeLayout
+          Id="Package\load population.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="479.416666666667,264.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.083333333333,57.75"
+              Start="0,0"
+              End="116.083333333333,50.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5149700598803" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.5149700598803"
+                    Point2="0,23.5149700598803"
+                    Point3="4,23.5149700598803" />
+                  <mssgle:LineSegment
+                    End="112.083333333333,23.5149700598803" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.083333333333,23.5149700598803"
+                    Point2="116.083333333333,23.5149700598803"
+                    Point3="116.083333333333,27.5149700598803" />
+                  <mssgle:LineSegment
+                    End="116.083333333333,50.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.6353450520833,28.5149700598803,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\load population\Source OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\load population\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\load population\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Population]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -28682,7 +29065,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -29212,340 +29597,6 @@ where [refTable].[code_website] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Greffe dimension\Sa_greffe">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Greffe dimension\Dw_region">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Greffe dimension\Recherche">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_greffe]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Greffe dimension\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load commune dimension\sa_commune">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load commune dimension\dw_departement">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load commune dimension\Recherche">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dim_communes]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load commune dimension\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_socio_demographics\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\load population">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\load population\Source OLE DB"
-          TopLeft="226,130" />
-        <NodeLayout
-          Size="132,42"
-          Id="Package\load population\Recherche"
-          TopLeft="237.75,239.25" />
-        <EdgeLayout
-          Id="Package\load population.Paths[Sortie de source OLE DB]"
-          TopLeft="304.125,172">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,67.25"
-              Start="0,0"
-              End="0,59.75">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.75" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\load population\Destination OLE DB"
-          TopLeft="216.25,372" />
-        <EdgeLayout
-          Id="Package\load population.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="304.25,281.25">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,90.75"
-              Start="0,0"
-              End="0,83.25">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,83.25" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.50201171875,35.8203125,183.0040234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\load population\Source OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\load population\Recherche">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Population]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\load population\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_socio_demographics\recherche fk_commune">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[dim_communes]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_socio_demographics\recherche fk date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimDates]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_socio_demographics\rechereche fact">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Fact_socio_demographics]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_socio_demographics\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
