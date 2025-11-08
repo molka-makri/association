@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="334"
-  DTS:VersionGUID="{B47BEC2C-9152-4124-A852-F1891125EC39}">
+  DTS:VersionBuild="341"
+  DTS:VersionGUID="{D073BDA1-83C2-41D8-AD56-A0F57841B96D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9729,11 +9729,11 @@ where [refTable].[fk_greffe] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Load Fact_Association\Fact_Association"
+              refId="Package\Load Fact_Association\Destination OLE DB"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="Destination OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Tous droits réservés; http://www.microsoft.com/sql/support;4"
               description="Destination OLE DB"
-              name="Fact_Association"
+              name="Destination OLE DB"
               usesDispositions="true"
               version="4">
               <properties>
@@ -9786,7 +9786,7 @@ where [refTable].[fk_greffe] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Fact_Association\Fact_Association.Connections[OleDbConnection]"
+                  refId="Package\Load Fact_Association\Destination OLE DB.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[LocalHost.DW_Asso]"
                   connectionManagerRefId="Package.ConnectionManagers[LocalHost.DW_Asso]"
                   description="Connexion OLE DB en cours d'exécution utilisée pour accéder à la base de données."
@@ -9794,130 +9794,136 @@ where [refTable].[fk_greffe] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB]"
+                  refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
                   errorOrTruncationOperation="Insérer"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="Entrée de destination OLE DB">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[pk_identity]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[pk_identity]"
                       cachedDataType="i4"
                       cachedName="pk_identity"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_identity]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_identity]"
                       lineageId="Package\Load Fact_Association\fk_identity.Outputs[Sortie de recherche avec correspondance].Columns[pk_identity]" />
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[pk_management]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[pk_address]"
+                      cachedDataType="i4"
+                      cachedName="pk_address"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_address]"
+                      lineageId="Package\Load Fact_Association\fk_adress.Outputs[Sortie de recherche avec correspondance].Columns[pk_address]" />
+                    <inputColumn
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[pk_management]"
                       cachedDataType="i4"
                       cachedName="pk_management"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_management_address]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_management_address]"
                       lineageId="Package\Load Fact_Association\fk_gestion.Outputs[Sortie de recherche avec correspondance].Columns[pk_management]" />
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[fk_date_maj]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[fk_date_maj]"
                       cachedDataType="i4"
                       cachedName="fk_date_maj"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_maj_time]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_maj_time]"
                       lineageId="Package\Load Fact_Association\fk_date_maj.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_maj]" />
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[pk_website]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[pk_website]"
                       cachedDataType="i4"
                       cachedName="pk_website"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_websites]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_websites]"
                       lineageId="Package\Load Fact_Association\fk_website.Outputs[Sortie de recherche avec correspondance].Columns[pk_website]" />
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[pk_activity]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[pk_activity]"
                       cachedDataType="i4"
                       cachedName="pk_activity"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_activity]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_activity]"
                       lineageId="Package\Load Fact_Association\fk_Activity.Outputs[Sortie de recherche avec correspondance].Columns[pk_activity]" />
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[fk_date_creation]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[fk_date_creation]"
                       cachedDataType="i4"
                       cachedName="fk_date_creation"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_creation_date]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_creation_date]"
                       lineageId="Package\Load Fact_Association\fk_date_creation.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_creation]" />
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[fk_date_declaration]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[fk_date_declaration]"
                       cachedDataType="i4"
                       cachedName="fk_date_declaration"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_declaration_date]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_declaration_date]"
                       lineageId="Package\Load Fact_Association\fk_date_declaration.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_declaration]" />
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[fk_date_publication]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[fk_date_publication]"
                       cachedDataType="i4"
                       cachedName="fk_date_publication"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_publication_date]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_publication_date]"
                       lineageId="Package\Load Fact_Association\fk_date_publication.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_publication]" />
                     <inputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].Columns[fk_date_dissolution]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].Columns[fk_date_dissolution]"
                       cachedDataType="i4"
                       cachedName="fk_date_dissolution"
-                      externalMetadataColumnId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_dissolution_date]"
+                      externalMetadataColumnId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_dissolution_date]"
                       lineageId="Package\Load Fact_Association\fk_date_dissolution.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_dissolution]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_identity]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_identity]"
                       dataType="i4"
                       name="fk_identity" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_management_address]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_address]"
+                      dataType="i4"
+                      name="fk_address" />
+                    <externalMetadataColumn
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_management_address]"
                       dataType="i4"
                       name="fk_management_address" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_maj_time]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_maj_time]"
                       dataType="i4"
                       name="fk_maj_time" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_websites]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_websites]"
                       dataType="i4"
                       name="fk_websites" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_activity]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_activity]"
                       dataType="i4"
                       name="fk_activity" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_creation_date]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_creation_date]"
                       dataType="i4"
                       name="fk_creation_date" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_declaration_date]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_declaration_date]"
                       dataType="i4"
                       name="fk_declaration_date" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_publication_date]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_publication_date]"
                       dataType="i4"
                       name="fk_publication_date" />
                     <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_dissolution_date]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_dissolution_date]"
                       dataType="i4"
                       name="fk_dissolution_date" />
-                    <externalMetadataColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB].ExternalColumns[fk_address]"
-                      dataType="i4"
-                      name="fk_address" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load Fact_Association\Fact_Association.Outputs[Sortie d'erreur de destination OLE DB]"
+                  refId="Package\Load Fact_Association\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Sortie d'erreur de destination OLE DB"
-                  synchronousInputId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB]">
+                  synchronousInputId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Fact_Association\Fact_Association.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
+                      lineageId="Package\Load Fact_Association\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Fact_Association\Fact_Association.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      refId="Package\Load Fact_Association\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Fact_Association\Fact_Association.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
+                      lineageId="Package\Load Fact_Association\Destination OLE DB.Outputs[Sortie d'erreur de destination OLE DB].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -10135,7 +10141,7 @@ where [refTable].[code_address] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indique si les métadonnées sont à référencer en format XML."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="pk_address" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_address" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="complement" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="num_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="type_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lib_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lib_commune" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_insee" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_postal" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="pk_address" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_address" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="fk_commune" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="complement" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="num_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="type_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lib_voie" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="lib_commune" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_insee" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="code_postal" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="country" dataType="DT_WSTR" length="255" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -11521,7 +11527,7 @@ where [refTable].[code_website] = ?</property>
                   expressionType="Notify"
                   name="SqlCommandParam"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[fact_Association]) [refTable]
-where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ? and [refTable].[fk_dissolution_date] = ? and [refTable].[fk_declaration_date] = ? and [refTable].[fk_maj_time] = ? and [refTable].[fk_websites] = ? and [refTable].[fk_activity] = ? and [refTable].[fk_identity] = ? and [refTable].[fk_management_address] = ?</property>
+where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ? and [refTable].[fk_dissolution_date] = ? and [refTable].[fk_declaration_date] = ? and [refTable].[fk_maj_time] = ? and [refTable].[fk_websites] = ? and [refTable].[fk_activity] = ? and [refTable].[fk_identity] = ? and [refTable].[fk_address] = ? and [refTable].[fk_management_address] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Spécifie le type de connexion utilisé pour accéder au dataset de référence."
@@ -11557,7 +11563,7 @@ where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ?
                   containsID="true"
                   dataType="System.String"
                   description="Spécifie la liste d'identificateurs de traçabilité se mappant aux paramètres utilisés dans la propriété SQLCommand par l'instruction SQL. Les entrées dans la liste sont séparées par des points-virgules."
-                  name="ParameterMap">#{Package\Load Fact_Association\fk_date_creation.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_creation]};#{Package\Load Fact_Association\fk_date_publication.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_publication]};#{Package\Load Fact_Association\fk_date_dissolution.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_dissolution]};#{Package\Load Fact_Association\fk_date_declaration.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_declaration]};#{Package\Load Fact_Association\fk_date_maj.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_maj]};#{Package\Load Fact_Association\fk_website.Outputs[Sortie de recherche avec correspondance].Columns[pk_website]};#{Package\Load Fact_Association\fk_Activity.Outputs[Sortie de recherche avec correspondance].Columns[pk_activity]};#{Package\Load Fact_Association\fk_identity.Outputs[Sortie de recherche avec correspondance].Columns[pk_identity]};#{Package\Load Fact_Association\fk_gestion.Outputs[Sortie de recherche avec correspondance].Columns[pk_management]};</property>
+                  name="ParameterMap">#{Package\Load Fact_Association\fk_date_creation.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_creation]};#{Package\Load Fact_Association\fk_date_publication.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_publication]};#{Package\Load Fact_Association\fk_date_dissolution.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_dissolution]};#{Package\Load Fact_Association\fk_date_declaration.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_declaration]};#{Package\Load Fact_Association\fk_date_maj.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_maj]};#{Package\Load Fact_Association\fk_website.Outputs[Sortie de recherche avec correspondance].Columns[pk_website]};#{Package\Load Fact_Association\fk_Activity.Outputs[Sortie de recherche avec correspondance].Columns[pk_activity]};#{Package\Load Fact_Association\fk_identity.Outputs[Sortie de recherche avec correspondance].Columns[pk_identity]};#{Package\Load Fact_Association\fk_adress.Outputs[Sortie de recherche avec correspondance].Columns[pk_address]};#{Package\Load Fact_Association\fk_gestion.Outputs[Sortie de recherche avec correspondance].Columns[pk_management]};</property>
                 <property
                   dataType="System.Int32"
                   description="Spécifie la page de codes de la colonne à utiliser lorsque les informations de page de codes ne sont pas disponibles à partir de la source de données."
@@ -11581,6 +11587,38 @@ where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ?
                   name="Entrée de recherche">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[pk_identity]"
+                      cachedDataType="i4"
+                      cachedName="pk_identity"
+                      lineageId="Package\Load Fact_Association\fk_identity.Outputs[Sortie de recherche avec correspondance].Columns[pk_identity]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">fk_identity</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[pk_address]"
+                      cachedDataType="i4"
+                      cachedName="pk_address"
+                      lineageId="Package\Load Fact_Association\fk_adress.Outputs[Sortie de recherche avec correspondance].Columns[pk_address]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">fk_address</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[pk_management]"
                       cachedDataType="i4"
                       cachedName="pk_management"
@@ -11597,15 +11635,31 @@ where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ?
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[pk_identity]"
+                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[fk_date_maj]"
                       cachedDataType="i4"
-                      cachedName="pk_identity"
-                      lineageId="Package\Load Fact_Association\fk_identity.Outputs[Sortie de recherche avec correspondance].Columns[pk_identity]">
+                      cachedName="fk_date_maj"
+                      lineageId="Package\Load Fact_Association\fk_date_maj.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_maj]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">fk_identity</property>
+                          name="JoinToReferenceColumn">fk_maj_time</property>
+                        <property
+                          dataType="System.Null"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[fk_date_creation]"
+                      cachedDataType="i4"
+                      cachedName="fk_date_creation"
+                      lineageId="Package\Load Fact_Association\fk_date_creation.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_creation]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
+                          name="JoinToReferenceColumn">fk_creation_date</property>
                         <property
                           dataType="System.Null"
                           description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
@@ -11645,31 +11699,15 @@ where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ?
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[fk_date_maj]"
+                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[fk_date_publication]"
                       cachedDataType="i4"
-                      cachedName="fk_date_maj"
-                      lineageId="Package\Load Fact_Association\fk_date_maj.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_maj]">
+                      cachedName="fk_date_publication"
+                      lineageId="Package\Load Fact_Association\fk_date_publication.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_publication]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">fk_maj_time</property>
-                        <property
-                          dataType="System.Null"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[fk_date_declaration]"
-                      cachedDataType="i4"
-                      cachedName="fk_date_declaration"
-                      lineageId="Package\Load Fact_Association\fk_date_declaration.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_declaration]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">fk_declaration_date</property>
+                          name="JoinToReferenceColumn">fk_publication_date</property>
                         <property
                           dataType="System.Null"
                           description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
@@ -11693,31 +11731,15 @@ where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ?
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[fk_date_publication]"
+                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[fk_date_declaration]"
                       cachedDataType="i4"
-                      cachedName="fk_date_publication"
-                      lineageId="Package\Load Fact_Association\fk_date_publication.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_publication]">
+                      cachedName="fk_date_declaration"
+                      lineageId="Package\Load Fact_Association\fk_date_declaration.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_declaration]">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">fk_publication_date</property>
-                        <property
-                          dataType="System.Null"
-                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
-                          name="CopyFromReferenceColumn" />
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Load Fact_Association\Recherche.Inputs[Entrée de recherche].Columns[fk_date_creation]"
-                      cachedDataType="i4"
-                      cachedName="fk_date_creation"
-                      lineageId="Package\Load Fact_Association\fk_date_creation.Outputs[Sortie de recherche avec correspondance].Columns[fk_date_creation]">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Spécifie la colonne de la table de référence sur laquelle une colonne se lie."
-                          name="JoinToReferenceColumn">fk_creation_date</property>
+                          name="JoinToReferenceColumn">fk_declaration_date</property>
                         <property
                           dataType="System.Null"
                           description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
@@ -11748,6 +11770,20 @@ where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ?
                           dataType="System.String"
                           description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
                           name="CopyFromReferenceColumn">fk_identity</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Load Fact_Association\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[fk_address]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copie de colonnes"
+                      lineageId="Package\Load Fact_Association\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[fk_address]"
+                      name="fk_address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Spécifie la colonne de la table de référence à partir de laquelle une colonne est copiée."
+                          name="CopyFromReferenceColumn">fk_address</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
@@ -12773,7 +12809,7 @@ where [refTable].[fk_creation_date] = ? and [refTable].[fk_publication_date] = ?
               startId="Package\Load Fact_Association\fk_gestion.Outputs[Sortie de recherche avec correspondance]" />
             <path
               refId="Package\Load Fact_Association.Paths[Sortie de recherche sans correspondance]"
-              endId="Package\Load Fact_Association\Fact_Association.Inputs[Entrée de destination OLE DB]"
+              endId="Package\Load Fact_Association\Destination OLE DB.Inputs[Entrée de destination OLE DB]"
               name="Sortie de recherche sans correspondance"
               startId="Package\Load Fact_Association\Recherche.Outputs[Sortie de recherche sans correspondance]" />
             <path
@@ -23719,7 +23755,7 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="190,42"
           Id="Package\Load Greffe dimension"
-          TopLeft="944.54365079365,782.126984126985" />
+          TopLeft="892.54365079365,779.126984126985" />
         <NodeLayout
           Size="195,42"
           Id="Package\Load identity dimension"
@@ -23727,7 +23763,7 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="285,42"
           Id="Package\Load managment_department dimension"
-          TopLeft="264.571428571428,415.857142857143" />
+          TopLeft="264.571428571428,421.857142857143" />
         <NodeLayout
           Size="154,42"
           Id="Package\load population"
@@ -23816,18 +23852,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 11]"
-          TopLeft="565.642857142857,802.992063492064">
+          TopLeft="565.642857142857,801.492063492064">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="378.900793650793,0"
+              EndConnector="326.900793650793,0"
               Start="0,0"
-              End="371.400793650793,0">
+              End="319.400793650793,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="371.400793650793,0" />
+                    End="319.400793650793,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -23894,30 +23930,18 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 14]"
-          TopLeft="1039.54365079365,782.126984126985">
+          TopLeft="983.66468253968,779.126984126985">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-59.75793650794,-290.519841269842"
+              EndConnector="0,-287.519841269842"
               Start="0,0"
-              End="-59.75793650794,-283.019841269842">
+              End="0,-280.019841269842">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-141.259920634921" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,-141.259920634921"
-                    Point2="0,-145.259920634921"
-                    Point3="-4,-145.259920634921" />
-                  <mssgle:LineSegment
-                    End="-55.75793650794,-145.259920634921" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-55.75793650794,-145.259920634921"
-                    Point2="-59.75793650794,-145.259920634921"
-                    Point3="-59.75793650794,-149.259920634921" />
-                  <mssgle:LineSegment
-                    End="-59.75793650794,-283.019841269842" />
+                    End="0,-280.019841269842" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24094,30 +24118,30 @@ where [refTable].[code_website] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Contrainte 6]"
-          TopLeft="407.071428571428,415.857142857143">
+          TopLeft="407.071428571428,421.857142857143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="257.039682539683,-88.857142857143"
+              EndConnector="257.039682539683,-94.857142857143"
               Start="0,0"
-              End="257.039682539683,-81.357142857143">
+              End="257.039682539683,-87.357142857143">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-48.8690724724129" />
+                    End="0,-52.4390098419327" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-48.8690724724129"
-                    Point2="0,-52.8690724724129"
-                    Point3="4,-52.8690724724129" />
+                    Point1="0,-52.4390098419327"
+                    Point2="0,-56.4390098419327"
+                    Point3="4,-56.4390098419327" />
                   <mssgle:LineSegment
-                    End="253.039682539683,-52.8690724724129" />
+                    End="253.039682539683,-56.4390098419327" />
                   <mssgle:CubicBezierSegment
-                    Point1="253.039682539683,-52.8690724724129"
-                    Point2="257.039682539683,-52.8690724724129"
-                    Point3="257.039682539683,-56.8690724724129" />
+                    Point1="253.039682539683,-56.4390098419327"
+                    Point2="257.039682539683,-56.4390098419327"
+                    Point3="257.039682539683,-60.4390098419327" />
                   <mssgle:LineSegment
-                    End="257.039682539683,-81.357142857143" />
+                    End="257.039682539683,-87.357142857143" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25883,9 +25907,9 @@ where [refTable].[code_website] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="131,42"
+          Size="139,42"
           Id="Package\Load Fact_Association\fk_website"
-          TopLeft="198,362.666666666667" />
+          TopLeft="143,358.666666666667" />
         <NodeLayout
           Size="174,42"
           Id="Package\Load Fact_Association\fk_date_publication"
@@ -25893,65 +25917,57 @@ where [refTable].[code_website] = ?</property>
         <NodeLayout
           Size="175,42"
           Id="Package\Load Fact_Association\fk_date_declaration"
-          TopLeft="430,271.666666666667" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Load Fact_Association\Fact_Association"
-          TopLeft="190.681818181818,559.484848484849" />
+          TopLeft="792,268.666666666667" />
         <NodeLayout
           Size="129,42"
           Id="Package\Load Fact_Association\fk_Activity"
-          TopLeft="396,365.666666666667" />
+          TopLeft="499,361.666666666667" />
         <NodeLayout
           Size="129,42"
           Id="Package\Load Fact_Association\fk_gestion"
-          TopLeft="423.772727272727,451.833333333334" />
+          TopLeft="501.772727272727,454.833333333334" />
         <NodeLayout
           Size="173,42"
           Id="Package\Load Fact_Association\fk_date_dissolution"
-          TopLeft="821,223.666666666667" />
+          TopLeft="797,180.666666666667" />
         <NodeLayout
           Size="127,42"
           Id="Package\Load Fact_Association\fk_adress"
-          TopLeft="606.803030303031,450.166666666667" />
+          TopLeft="829.803030303031,455.166666666667" />
         <NodeLayout
           Size="156,42"
           Id="Package\Load Fact_Association\SA_Association"
-          TopLeft="184.666666666667,0" />
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Load Fact_Association\Recherche"
-          TopLeft="203.666666666667,452.166666666667" />
+          TopLeft="142.666666666667,1" />
         <NodeLayout
           Size="129,42"
           Id="Package\Load Fact_Association\fk_identity"
-          TopLeft="602.181818181818,364.651515151516" />
+          TopLeft="833.181818181818,358.651515151516" />
         <NodeLayout
           Size="139,42"
           Id="Package\Load Fact_Association\fk_date_maj"
-          TopLeft="189,270.666666666667" />
+          TopLeft="140,261.666666666667" />
         <NodeLayout
           Size="160,42"
           Id="Package\Load Fact_Association\fk_date_creation"
-          TopLeft="180,171.666666666667" />
+          TopLeft="137,170.666666666667" />
         <NodeLayout
           Size="195,42"
           Id="Package\Load Fact_Association\Conversion de données"
-          TopLeft="170,86.666666666667" />
+          TopLeft="116,86.666666666667" />
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de source OLE DB]"
-          TopLeft="265.083333333333,42">
+          TopLeft="217.083333333333,43">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.666666666667"
+              EndConnector="0,43.666666666667"
               Start="0,0"
-              End="0,37.166666666667">
+              End="0,36.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.166666666667" />
+                    End="0,36.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -25961,313 +25977,297 @@ where [refTable].[code_website] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Fact_Association.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="270.924242424242,494.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,65.318181818182"
-              Start="0,0"
-              End="0,57.818181818182">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,57.818181818182" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.50201171875,23.104403409091,183.0040234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance9]"
-          TopLeft="423.772727272727,473">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-88.1060606060601,0"
-              Start="0,0"
-              End="-80.6060606060601,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-80.6060606060601,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-131.98004202178,5,183.3540234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance8]"
-          TopLeft="606.803030303031,471.999999999999">
+          TopLeft="829.803030303031,476.000000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-54.0303030303036,0"
+              EndConnector="-199.030303030304,0"
               Start="0,0"
-              End="-46.5303030303036,0">
+              End="-191.530303030304,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-46.5303030303036,0" />
+                    End="-191.530303030304,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-114.942163233902,5,183.3540234375,11.609375"
+              BoundingBox="-187.442163233902,5,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance7]"
-          TopLeft="668.492424242424,406.651515151516">
+          TopLeft="895.492424242424,400.651515151516">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43.5151515151513"
+              EndConnector="0,54.515151515151"
               Start="0,0"
-              End="0,36.0151515151513">
+              End="0,47.015151515151">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.0151515151513" />
+                    End="0,47.015151515151" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-91.67701171875,12.2028882575757,183.3540234375,11.609375"
+              BoundingBox="-91.67701171875,17.7028882575755,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance6]"
-          TopLeft="525,386.159090909091">
+          TopLeft="628,381.159090909092">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="77.1818181818179,0"
+              EndConnector="205.181818181818,0"
               Start="0,0"
-              End="69.6818181818179,0">
+              End="197.681818181818,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="69.6818181818179,0" />
+                    End="197.681818181818,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-56.8361026278411,5,183.3540234375,11.609375"
+              BoundingBox="7.16389737215898,5,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance5]"
-          TopLeft="329,385.166666666667">
+          TopLeft="282,381.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67,0"
+              EndConnector="217,0"
               Start="0,0"
-              End="59.5,0">
+              End="209.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="59.5,0" />
+                    End="209.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-61.92701171875,5,183.3540234375,11.609375"
+              BoundingBox="13.07298828125,5,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance4]"
-          TopLeft="261,312.666666666667">
+          TopLeft="211,303.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50"
+              EndConnector="0,55"
               Start="0,0"
-              End="0,42.5">
+              End="0,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.5" />
+                    End="0,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-91.67701171875,15.4453125,183.3540234375,11.609375"
+              BoundingBox="-91.67701171875,17.9453125,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance3]"
-          TopLeft="430,292.166666666667">
+          TopLeft="792,286.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-102,0"
+              EndConnector="-513,0"
               Start="0,0"
-              End="-94.5,0">
+              End="-505.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-94.5,0" />
+                    End="-505.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-138.92701171875,5,183.3540234375,11.609375"
+              BoundingBox="-344.42701171875,5,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance2]"
-          TopLeft="821,250.333333333334">
+          TopLeft="881.5,222.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-216,42.3333333333334"
+              EndConnector="0,46"
               Start="0,0"
-              End="-208.5,42.3333333333334">
+              End="0,38.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-87.1559633027523,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-87.1559633027523,0"
-                    Point2="-91.1559633027523,0"
-                    Point3="-91.1559633027523,4" />
-                  <mssgle:LineSegment
-                    End="-91.1559633027523,38.3333333333334" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-91.1559633027523,38.3333333333334"
-                    Point2="-91.1559633027523,42.3333333333334"
-                    Point3="-95.1559633027523,42.3333333333334" />
-                  <mssgle:LineSegment
-                    End="-208.5,42.3333333333334" />
+                    End="0,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-182.832975021502,-17.609375,183.3540234375,11.609375"
+              BoundingBox="-91.67701171875,13.4453125,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance1]"
-          TopLeft="639,198.666666666667">
+          TopLeft="639,200.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="182,40.3333333333333"
+              EndConnector="158,0"
               Start="0,0"
-              End="174.5,40.3333333333333">
+              End="150.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="101.192660550459,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="101.192660550459,0"
-                    Point2="105.192660550459,0"
-                    Point3="105.192660550459,4" />
-                  <mssgle:LineSegment
-                    End="105.192660550459,36.3333333333333" />
-                  <mssgle:CubicBezierSegment
-                    Point1="105.192660550459,36.3333333333333"
-                    Point2="105.192660550459,40.3333333333333"
-                    Point3="109.192660550459,40.3333333333333" />
-                  <mssgle:LineSegment
-                    End="174.5,40.3333333333333" />
+                    End="150.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="13.515648831709,-17.609375,183.3540234375,11.609375"
+              BoundingBox="-16.42701171875,5,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="340,195.666666666667">
+          TopLeft="297,195.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125,0"
+              EndConnector="168,0"
               Start="0,0"
-              End="117.5,0">
+              End="160.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="117.5,0" />
+                    End="160.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-32.92701171875,5,183.3540234375,11.609375"
+              BoundingBox="-11.42701171875,5,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Fact_Association.Paths[Sortie de conversion de données]"
-          TopLeft="263.75,128.666666666667">
+          TopLeft="215.25,128.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="0,42"
               Start="0,0"
-              End="0,35.5">
+              End="0,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Load Fact_Association\Recherche"
+          TopLeft="148,454" />
+        <EdgeLayout
+          Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance9]"
+          TopLeft="501.772727272727,475.416666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-221.772727272727,0"
+              Start="0,0"
+              End="-214.272727272727,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-214.272727272727,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-198.813375355114,5,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Load Fact_Association\Destination OLE DB"
+          TopLeft="125,538" />
+        <EdgeLayout
+          Id="Package\Load Fact_Association.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="213.75,496">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.50201171875,11.4453125,183.0040234375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -26343,19 +26343,6 @@ where [refTable].[code_website] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_Association\Fact_Association">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load Fact_Association\fk_Activity">
     <Properties>
       <Property>
@@ -26384,7 +26371,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -26394,7 +26381,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -26430,7 +26417,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -26440,7 +26427,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -26457,29 +26444,6 @@ where [refTable].[code_website] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_Association\Recherche">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[fact_Association]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -28877,6 +28841,42 @@ where [refTable].[code_website] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_Association\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[fact_Association]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_Association\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
