@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="341"
-  DTS:VersionGUID="{D073BDA1-83C2-41D8-AD56-A0F57841B96D}">
+  DTS:VersionBuild="346"
+  DTS:VersionGUID="{C42D33EB-88D7-4FB8-AF27-447717723168}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -22647,7 +22647,25 @@ where [refTable].[code_objet_social] = ?</property>
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Publication sur le web"
-                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]" />
+                      errorOrTruncationOperation="Calcul"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression de colonne dérivée"
+                          name="Expression">[REPLACENULL](#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]},"Inconnu")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expression claire de colonne dérivée"
+                          expressionType="Notify"
+                          name="FriendlyExpression">REPLACENULL([Publication sur le web],"Inconnu")</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -22681,28 +22699,6 @@ where [refTable].[code_objet_social] = ?</property>
                           description="Expression claire de colonne dérivée"
                           expressionType="Notify"
                           name="FriendlyExpression">ISNULL(siteweb) || TRIM(siteweb) == "" ? "Inconnu" : siteweb</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Publication sur le web_clean]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Calcul"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Publication sur le web_clean]"
-                      name="Publication sur le web_clean"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression de colonne dérivée"
-                          name="Expression">[ISNULL](#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]}) || [TRIM](#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]}) == "" ? 0 : (DT_I4)#{Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]}</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Expression claire de colonne dérivée"
-                          expressionType="Notify"
-                          name="FriendlyExpression">ISNULL([Publication sur le web]) || TRIM([Publication sur le web]) == "" ? 0 : (DT_I4)[Publication sur le web]</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -22787,18 +22783,19 @@ WHERE
                       externalMetadataColumnId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_0]"
                       lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siteweb_clean]" />
                     <inputColumn
-                      refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[Publication sur le web_clean]"
-                      cachedDataType="i4"
-                      cachedName="Publication sur le web_clean"
-                      externalMetadataColumnId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
-                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Publication sur le web_clean]" />
-                    <inputColumn
                       refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[code_website]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="code_website"
                       externalMetadataColumnId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_2]"
                       lineageId="Package\Load website dimension\Recherche.Outputs[Sortie de recherche avec correspondance].Columns[code_website]" />
+                    <inputColumn
+                      refId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].Columns[Publication sur le web]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Publication sur le web"
+                      externalMetadataColumnId="Package\Load website dimension\Commande OLE DB.Inputs[Entrée de commande OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -22960,11 +22957,12 @@ WHERE
                       externalMetadataColumnId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[website]"
                       lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[siteweb_clean]" />
                     <inputColumn
-                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].Columns[Publication sur le web_clean]"
-                      cachedDataType="i4"
-                      cachedName="Publication sur le web_clean"
+                      refId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].Columns[Publication sur le web]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Publication sur le web"
                       externalMetadataColumnId="Package\Load website dimension\Dw_website.Inputs[Entrée de destination OLE DB].ExternalColumns[publication_web]"
-                      lineageId="Package\Load website dimension\Colonne dérivée.Outputs[Sortie de colonne dérivée].Columns[Publication sur le web_clean]" />
+                      lineageId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].Columns[Publication sur le web]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -23234,7 +23232,7 @@ where [refTable].[code_website] = ?</property>
                 <property
                   dataType="System.String"
                   description="Spécifie le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
-                  name="OpenRowset">[dbo].[Staging_Association_Complete]</property>
+                  name="OpenRowset">[dbo].[websites]</property>
                 <property
                   dataType="System.String"
                   description="Spécifie la variable contenant le nom de l'objet de base de données utilisé pour ouvrir un ensemble de lignes."
@@ -23327,164 +23325,6 @@ where [refTable].[code_website] = ?</property>
                       dataType="wstr"
                       length="255"
                       name="id" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[id_ex]"
-                      dataType="wstr"
-                      length="255"
-                      name="id_ex" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[siret]"
-                      dataType="wstr"
-                      length="255"
-                      name="siret" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[rup_mi]"
-                      dataType="wstr"
-                      length="255"
-                      name="rup_mi" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[titre_association]"
-                      dataType="wstr"
-                      length="255"
-                      name="titre_association" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[titre_court]"
-                      dataType="wstr"
-                      length="255"
-                      name="titre_court" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[observation]"
-                      dataType="wstr"
-                      length="255"
-                      name="observation" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[position]"
-                      dataType="wstr"
-                      length="255"
-                      name="position" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[nature]"
-                      dataType="wstr"
-                      length="255"
-                      name="nature" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[groupement]"
-                      dataType="wstr"
-                      length="255"
-                      name="groupement" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[date_creation]"
-                      dataType="wstr"
-                      length="255"
-                      name="date_creation" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[date_publication]"
-                      dataType="wstr"
-                      length="255"
-                      name="date_publication" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[date_dissolution]"
-                      dataType="wstr"
-                      length="255"
-                      name="date_dissolution" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[date_declaration]"
-                      dataType="wstr"
-                      length="255"
-                      name="date_declaration" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[date_maj]"
-                      dataType="wstr"
-                      length="255"
-                      name="date_maj" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[objet_social1]"
-                      dataType="r8"
-                      name="objet_social1" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[objet_social2]"
-                      dataType="r8"
-                      name="objet_social2" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_complement]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_complement" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_numvoie]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_numvoie" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_repetition]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_repetition" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_typevoie]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_typevoie" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_libvoie]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_libvoie" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_distrib]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_distrib" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_codeinsee]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_codeinsee" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_codepostal]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_codepostal" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrs_libcommune]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrs_libcommune" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_complemgeo]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrg_complemgeo" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_libvoie]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrg_libvoie" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_distrib]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrg_distrib" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_achemine]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrg_achemine" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[adrg_pays]"
-                      dataType="wstr"
-                      length="255"
-                      name="adrg_pays" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[gestion]"
-                      dataType="wstr"
-                      length="255"
-                      name="gestion" />
-                    <externalMetadataColumn
-                      refId="Package\Load website dimension\SA_website.Outputs[Sortie de source OLE DB].ExternalColumns[dir_civilite]"
-                      dataType="wstr"
-                      length="255"
-                      name="dir_civilite" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -24571,6 +24411,10 @@ where [refTable].[code_website] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="159,42"
+          Id="Package\Load Activity dimension\Colonne dérivée"
+          TopLeft="453,128" />
+        <NodeLayout
           Size="177,42"
           Id="Package\Load Activity dimension\Destination OLE DB"
           TopLeft="296,442" />
@@ -24594,10 +24438,74 @@ where [refTable].[code_website] = ?</property>
           Size="179,42"
           Id="Package\Load Activity dimension\Commande OLE DB"
           TopLeft="624,445" />
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Load Activity dimension\Colonne dérivée"
-          TopLeft="453,128" />
+        <EdgeLayout
+          Id="Package\Load Activity dimension.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="531.75,322">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32"
+              Start="0,0"
+              End="0,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,6.4453125,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Activity dimension.Paths[Sortie de conversion de données]"
+          TopLeft="530.75,246">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Activity dimension.Paths[Sortie de colonne dérivée]"
+          TopLeft="531,170">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Activity dimension.Paths[Sortie de source OLE DB]"
           TopLeft="530,85">
@@ -24690,74 +24598,6 @@ where [refTable].[code_website] = ?</property>
             <mssgm:EdgeLabel
               BoundingBox="-11.7603450520833,24.929873772791,183.3540234375,11.609375"
               RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Activity dimension.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="531.75,322">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,32"
-              Start="0,0"
-              End="0,24.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.67701171875,6.4453125,183.3540234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Activity dimension.Paths[Sortie de conversion de données]"
-          TopLeft="530.75,246">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Activity dimension.Paths[Sortie de colonne dérivée]"
-          TopLeft="531,170">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -24943,7 +24783,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -24965,7 +24807,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25139,9 +24983,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25175,9 +25017,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25211,9 +25051,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25235,9 +25073,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25259,9 +25095,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25307,9 +25141,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25331,9 +25163,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -25741,21 +25571,21 @@ where [refTable].[code_website] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="122,42"
-          Id="Package\Load Fact Management\fk_greffe"
-          TopLeft="429,170" />
-        <NodeLayout
-          Size="141,42"
-          Id="Package\Load Fact Management\Recherche 1"
-          TopLeft="422,254" />
-        <NodeLayout
           Size="125,42"
           Id="Package\Load Fact Management\sa_greffe"
           TopLeft="429,81" />
         <NodeLayout
+          Size="122,42"
+          Id="Package\Load Fact Management\fk_greffe"
+          TopLeft="429,170" />
+        <NodeLayout
           Size="177,42"
           Id="Package\Load Fact Management\Destination OLE DB"
           TopLeft="407,331" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Load Fact Management\Recherche 1"
+          TopLeft="422,254" />
         <EdgeLayout
           Id="Package\Load Fact Management.Paths[Sortie de source OLE DB]"
           TopLeft="490.75,123">
@@ -25776,30 +25606,6 @@ where [refTable].[code_website] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Fact Management.Paths[Sortie de recherche avec correspondance]"
-          TopLeft="491.25,212">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.67701171875,11.4453125,183.3540234375,11.609375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -25826,55 +25632,33 @@ where [refTable].[code_website] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact Management.Paths[Sortie de recherche avec correspondance]"
+          TopLeft="491.25,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.67701171875,11.4453125,183.3540234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact Management\fk_greffe">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_greffe]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact Management\Recherche 1">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[fact_Management]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Fact Management\sa_greffe">
     <Properties>
@@ -25889,6 +25673,29 @@ where [refTable].[code_website] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Fact Management\fk_greffe">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_greffe]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Fact Management\Destination OLE DB">
     <Properties>
       <Property>
@@ -25898,6 +25705,29 @@ where [refTable].[code_website] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact Management\Recherche 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[fact_Management]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -25919,6 +25749,10 @@ where [refTable].[code_website] = ?</property>
           Id="Package\Load Fact_Association\fk_date_declaration"
           TopLeft="792,268.666666666667" />
         <NodeLayout
+          Size="177,42"
+          Id="Package\Load Fact_Association\Destination OLE DB"
+          TopLeft="125,538" />
+        <NodeLayout
           Size="129,42"
           Id="Package\Load Fact_Association\fk_Activity"
           TopLeft="499,361.666666666667" />
@@ -25938,6 +25772,10 @@ where [refTable].[code_website] = ?</property>
           Size="156,42"
           Id="Package\Load Fact_Association\SA_Association"
           TopLeft="142.666666666667,1" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Load Fact_Association\Recherche"
+          TopLeft="148,454" />
         <NodeLayout
           Size="129,42"
           Id="Package\Load Fact_Association\fk_identity"
@@ -25974,6 +25812,54 @@ where [refTable].[code_website] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact_Association.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="213.75,496">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-91.50201171875,11.4453125,183.0040234375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance9]"
+          TopLeft="501.772727272727,475.416666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-221.772727272727,0"
+              Start="0,0"
+              End="-214.272727272727,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-214.272727272727,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-198.813375355114,5,183.3540234375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26044,7 +25930,7 @@ where [refTable].[code_website] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="7.16389737215898,5,183.3540234375,11.609375"
+              BoundingBox="7.16389737215897,5,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -26214,62 +26100,6 @@ where [refTable].[code_website] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Load Fact_Association\Recherche"
-          TopLeft="148,454" />
-        <EdgeLayout
-          Id="Package\Load Fact_Association.Paths[Sortie de recherche avec correspondance9]"
-          TopLeft="501.772727272727,475.416666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-221.772727272727,0"
-              Start="0,0"
-              End="-214.272727272727,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-214.272727272727,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-198.813375355114,5,183.3540234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\Load Fact_Association\Destination OLE DB"
-          TopLeft="125,538" />
-        <EdgeLayout
-          Id="Package\Load Fact_Association.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="213.75,496">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.50201171875,11.4453125,183.0040234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -26343,6 +26173,19 @@ where [refTable].[code_website] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_Association\Destination OLE DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Fact_Association\fk_Activity">
     <Properties>
       <Property>
@@ -26371,7 +26214,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -26381,7 +26224,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -26417,7 +26260,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -26427,7 +26270,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -26444,6 +26287,29 @@ where [refTable].[code_website] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact_Association\Recherche">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[fact_Association]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -26572,7 +26438,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -26738,7 +26606,9 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -27156,9 +27026,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27252,9 +27120,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27276,9 +27142,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27300,9 +27164,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -27363,45 +27225,25 @@ where [refTable].[code_website] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="125,42"
-          Id="Package\Load Greffe dimension\sa_greffe"
-          TopLeft="393,43" />
+          Size="132,42"
+          Id="Package\Load Greffe dimension\Recherche"
+          TopLeft="392,314" />
         <NodeLayout
           Size="124,42"
           Id="Package\Load Greffe dimension\fk_region"
           TopLeft="391,208" />
         <NodeLayout
+          Size="125,42"
+          Id="Package\Load Greffe dimension\sa_greffe"
+          TopLeft="393,43" />
+        <NodeLayout
           Size="177,42"
           Id="Package\Load Greffe dimension\Destination OLE DB"
           TopLeft="376,398" />
         <NodeLayout
-          Size="132,42"
-          Id="Package\Load Greffe dimension\Recherche"
-          TopLeft="392,314" />
-        <EdgeLayout
-          Id="Package\Load Greffe dimension.Paths[Sortie de recherche sans correspondance]"
-          TopLeft="461.25,356">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-91.50201171875,11.4453125,183.0040234375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="159,42"
+          Id="Package\Load Greffe dimension\Colonne dérivée"
+          TopLeft="380,132" />
         <EdgeLayout
           Id="Package\Load Greffe dimension.Paths[Sortie de recherche avec correspondance]"
           TopLeft="455.5,250">
@@ -27426,10 +27268,28 @@ where [refTable].[code_website] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="159,42"
-          Id="Package\Load Greffe dimension\Colonne dérivée"
-          TopLeft="380,132" />
+        <EdgeLayout
+          Id="Package\Load Greffe dimension.Paths[Sortie de colonne dérivée]"
+          TopLeft="456.25,174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Greffe dimension.Paths[Sortie de source OLE DB]"
           TopLeft="457.5,85">
@@ -27453,66 +27313,32 @@ where [refTable].[code_website] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Greffe dimension.Paths[Sortie de colonne dérivée]"
-          TopLeft="456.25,174">
+          Id="Package\Load Greffe dimension.Paths[Sortie de recherche sans correspondance]"
+          TopLeft="461.25,356">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="0,42"
               Start="0,0"
-              End="0,26.5">
+              End="0,34.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-91.50201171875,11.4453125,183.0040234375,11.609375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Greffe dimension\sa_greffe">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Greffe dimension\fk_region">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Region]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load Greffe dimension\Destination OLE DB">
     <Properties>
@@ -27532,7 +27358,7 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -27542,7 +27368,43 @@ where [refTable].[code_website] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Greffe dimension\sa_greffe">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Greffe dimension\fk_region">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Region]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -27593,9 +27455,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -27689,9 +27549,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -27935,9 +27793,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28031,9 +27887,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -28160,9 +28014,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28184,9 +28036,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28537,10 +28387,6 @@ where [refTable].[code_website] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="102,42"
-          Id="Package\Load social_obj_parent dimension\Trier"
-          TopLeft="363.454545454546,214" />
-        <NodeLayout
           Size="166,42"
           Id="Package\Load social_obj_parent dimension\SA_object_parent"
           TopLeft="333.909090909091,32.6363636363637" />
@@ -28552,6 +28398,32 @@ where [refTable].[code_website] = ?</property>
           Size="159,42"
           Id="Package\Load social_obj_parent dimension\Colonne dérivée"
           TopLeft="338.181818181818,129.090909090909" />
+        <NodeLayout
+          Size="102,42"
+          Id="Package\Load social_obj_parent dimension\Trier"
+          TopLeft="363.454545454546,214" />
+        <EdgeLayout
+          Id="Package\Load social_obj_parent dimension.Paths[Sortie de tri]"
+          TopLeft="415.977272727273,256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81.636363636364"
+              Start="0,0"
+              End="0,74.136363636364">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.136363636364" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load social_obj_parent dimension.Paths[Sortie de source OLE DB]"
           TopLeft="417.295454545455,74.6363636363637">
@@ -28588,28 +28460,6 @@ where [refTable].[code_website] = ?</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,35.409090909091" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load social_obj_parent dimension.Paths[Sortie de tri]"
-          TopLeft="415.977272727273,256">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,81.636363636364"
-              Start="0,0"
-              End="0,74.136363636364">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,74.136363636364" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -28691,9 +28541,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28715,9 +28563,7 @@ where [refTable].[code_website] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -28788,7 +28634,7 @@ where [refTable].[code_website] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.2603450520833,36.7604790419162,183.3540234375,11.609375"
+              BoundingBox="-17.2603450520835,36.7604790419162,183.3540234375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -28841,42 +28687,6 @@ where [refTable].[code_website] = ?</property>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_Association\Recherche">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[fact_Association]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Fact_Association\Destination OLE DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
